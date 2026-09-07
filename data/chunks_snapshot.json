@@ -1,0 +1,1654 @@
+[
+  {
+    "ticket_id": "INC0420646",
+    "text": "Ticket INC0420646 \u2014 Hardware, 1 - Critical, SA - Sapphire Princess\nSA - Location reader hardware fault preventing guests from viewing Safety Essentials\nGuests on SA were unable to have their Safety Essentials viewing registered by the location system. On-site inspection found a physical fault on a bank of readers covering the affected deck.\nResolution: The issue was resolved by reseating a loose power connection on the affected reader bank on SA. Readers came back online immediately and Safety Essentials check-ins resumed registering correctly. The connection has been secured to prevent it from working loose again.",
+    "metadata": {
+      "resolution_code": "Resolved - Fixed Without Action",
+      "assignment_group": "PQR - Location Services",
+      "priority": "1 - Critical",
+      "incident_state": "Closed",
+      "impact": "2 - Significant / Large",
+      "category": "Hardware",
+      "configuration_item": "Location Services Experience",
+      "location": "SA - Sapphire Princess"
+    }
+  },
+  {
+    "ticket_id": "INC0070341",
+    "text": "Ticket INC0070341 \u2014 Hardware, 1 - Critical, RU - Ruby Princess\nRU - Samsung stateroom TVs going to black screen after watching the Fox News channel\nGuests on RU reported Samsung stateroom TVs going to a black screen after watching the Fox News channel, requiring a power cycle to restore picture. Hardware diagnostics traced the fault to the TV's HDMI switching chip under specific channel-change conditions.\nResolution: The issue was resolved by applying the vendor's firmware-level workaround for the HDMI switching chip defect on RU. The black-screen issue no longer reproduces after watching the affected channel. A permanent hardware fix is being tracked with the TV vendor.",
+    "metadata": {
+      "impact": "2 - Significant / Large",
+      "category": "Hardware",
+      "configuration_item": "Stateroom Experience",
+      "priority": "1 - Critical",
+      "assignment_group": "PQR - Media Services",
+      "resolution_code": "Resolved - Workaround Applied",
+      "location": "RU - Ruby Princess",
+      "incident_state": "Closed"
+    }
+  },
+  {
+    "ticket_id": "INC0205553",
+    "text": "Ticket INC0205553 \u2014 Application, 1 - Critical, ST - Star Princess\nST - Excursions module in ABC app repeatedly restarting after recent deployment\nThe shore-excursions module of the ABC app on ST began restarting repeatedly, intermittently preventing guests from browsing available excursions. Application logs showed an unhandled exception introduced in the latest release.\nResolution: The issue was resolved by rolling back the excursions module to the previous release on ST. The restart loop stopped immediately and excursion browsing returned to normal. A fix for the null-reference exception has been queued for the next deployment.",
+    "metadata": {
+      "impact": "1 - Extensive / Widespread",
+      "location": "ST - Star Princess",
+      "incident_state": "Closed",
+      "resolution_code": "Restart / Re-Deploy",
+      "priority": "1 - Critical",
+      "assignment_group": "PQR - ABC",
+      "category": "Application",
+      "configuration_item": "ABC (Ocean - ABC)"
+    }
+  },
+  {
+    "ticket_id": "INC0416344",
+    "text": "Ticket INC0416344 \u2014 Security, 1 - Critical, RP - Royal Princess\nRP - Unauthorized-charge investigation opened for stateroom account linked to ABC app\nA guest on RP disputed several stateroom-account charges made through the ABC app that they did not recognise. The security team opened an investigation to determine whether the account had been accessed without authorization.\nResolution: The investigation confirmed unauthorized access to the guest's account on RP and the suspicious session was revoked, with a password reset enforced. Disputed charges were reversed and the guest's account has been monitored for further suspicious activity.",
+    "metadata": {
+      "configuration_item": "ABC (Ocean - ABC)",
+      "assignment_group": "PQR - ABC",
+      "location": "RP - Royal Princess",
+      "priority": "1 - Critical",
+      "impact": "2 - Significant / Large",
+      "category": "Security",
+      "incident_state": "Closed",
+      "resolution_code": "Resolved by caller"
+    }
+  },
+  {
+    "ticket_id": "INC0085733",
+    "text": "Ticket INC0085733 \u2014 Database, 1 - Critical, SA - Sapphire Princess\nSA - Booking flow unavailable on ABC app, long-running database query blocking writes\nGuests reported being unable to complete new reservations through the ABC app on SA. The booking team confirmed reservation requests were timing out, and database monitoring showed a query against the booking schema holding a lock for an extended period.\nResolution: The issue was resolved by terminating the long-running query and redeploying the booking service on SA. Reservation submissions returned to normal response times immediately after the change. The reconciliation job schedule was adjusted to avoid overlapping with peak booking hours going forward.",
+    "metadata": {
+      "resolution_code": "Restart / Re-Deploy",
+      "assignment_group": "PQR - ABC",
+      "impact": "1 - Extensive / Widespread",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "category": "Database",
+      "priority": "1 - Critical",
+      "location": "SA - Sapphire Princess",
+      "incident_state": "Closed"
+    }
+  },
+  {
+    "ticket_id": "INC0328432",
+    "text": "Ticket INC0328432 \u2014 Other / Service Request, 1 - Critical, RP - Royal Princess\nRP - Guest requesting data export of ABC app account activity\nA guest on RP submitted a service request asking for an export of their account activity and purchase history from the ABC app for personal record-keeping.\nResolution: The requested account activity export was generated and delivered to the guest on RP after identity verification. The guest confirmed the export matched their expectations and the request was closed.",
+    "metadata": {
+      "incident_state": "Closed",
+      "location": "RP - Royal Princess",
+      "resolution_code": "Restart / Re-Deploy",
+      "assignment_group": "PQR - ABC",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "priority": "1 - Critical",
+      "impact": "1 - Extensive / Widespread",
+      "category": "Other / Service Request"
+    }
+  },
+  {
+    "ticket_id": "INC0189731",
+    "text": "Ticket INC0189731 \u2014 User Access & Authentication, 1 - Critical, SU - Sun Princess\nSU - Crew unable to log in to CrewCall Chat after shift-change roster update\nMultiple crew on SU reported being unable to log in to CrewCall Chat immediately after their shift-change roster update. Authentication logs showed the app's session token was not refreshing when crew role assignments changed mid-voyage.\nResolution: The issue was resolved by fixing the authentication token refresh so it triggers on crew role changes on SU. Affected crew were able to log in successfully immediately after the fix was deployed.",
+    "metadata": {
+      "assignment_group": "PQR - Portals",
+      "incident_state": "Closed",
+      "resolution_code": "Resolved - Permanent Fix Applied",
+      "configuration_item": "CrewCall Chat",
+      "location": "SU - Sun Princess",
+      "priority": "1 - Critical",
+      "category": "User Access & Authentication",
+      "impact": "1 - Extensive / Widespread"
+    }
+  },
+  {
+    "ticket_id": "INC0425870",
+    "text": "Ticket INC0425870 \u2014 Infrastructure, 1 - Critical, RU - Ruby Princess\nRU - Wayfinding kiosks not loading deck maps, content service latency elevated\nWayfinding kiosks on RU were stuck on a loading screen and never displayed deck maps. Infrastructure monitoring showed elevated latency on the content service feeding the kiosks.\nResolution: The issue was resolved by restarting the content service feeding the wayfinding kiosks on RU. Kiosks resumed loading deck maps normally immediately afterward.",
+    "metadata": {
+      "location": "RU - Ruby Princess",
+      "priority": "1 - Critical",
+      "incident_state": "Closed",
+      "category": "Infrastructure",
+      "assignment_group": "PQR - Portals",
+      "resolution_code": "Resolved - Fixed Without Action",
+      "configuration_item": "Wayfinding Experience",
+      "impact": "2 - Significant / Large"
+    }
+  },
+  {
+    "ticket_id": "INC0272332",
+    "text": "Ticket INC0272332 \u2014 Infrastructure, 1 - Critical, ST - Star Princess\nST - Location services degraded during muster drill due to gateway congestion\nDuring the scheduled muster drill on ST, location services became noticeably slow to respond as every reader on the ship reported check-ins simultaneously, congesting the BLE gateways.\nResolution: No permanent fix was required; the gateway congestion on ST cleared naturally once the drill's reporting spike ended. A staggered check-in window is being proposed for future drills to reduce peak gateway load.",
+    "metadata": {
+      "location": "ST - Star Princess",
+      "resolution_code": "Restart / Re-Deploy",
+      "incident_state": "Closed",
+      "impact": "1 - Extensive / Widespread",
+      "configuration_item": "Location Services Experience",
+      "assignment_group": "PQR - Location Services",
+      "category": "Infrastructure",
+      "priority": "1 - Critical"
+    }
+  },
+  {
+    "ticket_id": "INC0420462",
+    "text": "Ticket INC0420462 \u2014 Infrastructure, 1 - Critical, GP - Regal Princess\nGP - Stateroom VOD playback buffering for guests, media edge node overloaded\nGuests on GP reported on-demand video buffering frequently. Infrastructure monitoring showed the media edge node serving GP under high load, with video bitrate being throttled as a result.\nResolution: The issue was resolved by redirecting VOD traffic to a second media edge node on GP. Buffering reports dropped off immediately. Load-balancing rules across edge nodes are being reviewed to prevent uneven distribution going forward.",
+    "metadata": {
+      "resolution_code": "Resolved - Workaround Applied",
+      "assignment_group": "PQR - Media Services",
+      "impact": "2 - Significant / Large",
+      "configuration_item": "Stateroom Experience",
+      "category": "Infrastructure",
+      "priority": "1 - Critical",
+      "location": "GP - Regal Princess",
+      "incident_state": "Closed"
+    }
+  },
+  {
+    "ticket_id": "INC0193172",
+    "text": "Ticket INC0193172 \u2014 Infrastructure, 1 - Critical, AP - Grand Princess\nAP - media02.ap.ocean.com unreachable, failed network switch port\nmedia02.ap.ocean.com became unreachable from monitoring on AP. Infrastructure diagnostics traced the outage to a failed port on the onboard core switch that the host was connected to.\nResolution: The issue was resolved by moving media02.ap.ocean.com's connection to a spare switch port on AP. Connectivity was restored immediately, and the faulty port has been flagged for vendor replacement.",
+    "metadata": {
+      "configuration_item": "media02.ap.ocean.com",
+      "assignment_group": "PQR - Platform Ops",
+      "resolution_code": "3rd Party/ Vendor Support",
+      "priority": "1 - Critical",
+      "impact": "2 - Significant / Large",
+      "location": "AP - Grand Princess",
+      "incident_state": "Closed",
+      "category": "Infrastructure"
+    }
+  },
+  {
+    "ticket_id": "INC0304425",
+    "text": "Ticket INC0304425 \u2014 Database, 1 - Critical, SU - Sun Princess\nSU - Guest profile lookups slow on ABC app, database replica lag\nGuests on SU reported the ABC app taking an unusually long time to load their profile and account details. Database monitoring identified significant replication lag on the read replica serving profile lookup queries.\nResolution: The issue was resolved by redirecting traffic to the primary database while replication lag cleared, then redeploying the profile service on SU. Response times returned to baseline once the replica caught up. The batch update job has been moved to a lower-traffic window.",
+    "metadata": {
+      "category": "Database",
+      "incident_state": "Closed",
+      "priority": "1 - Critical",
+      "assignment_group": "PQR - ABC",
+      "resolution_code": "Restart / Re-Deploy",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "location": "SU - Sun Princess",
+      "impact": "2 - Significant / Large"
+    }
+  },
+  {
+    "ticket_id": "INC0087063",
+    "text": "Ticket INC0087063 \u2014 Infrastructure, 1 - Critical, SU - Sun Princess\nSU - Positioning platform process on sudclxlk8sv140.su.ocean.com restarting in a loop\nThe positioning platform's core process on sudclxlk8sv140.su.ocean.com began restarting continuously on SU, causing location readers to intermittently report offline.\nResolution: The issue was resolved by restarting the crashed coordination service and its dependent processing service on sudclxlk8sv140.su.ocean.com. Readers on SU reported back online immediately and remained stable through follow-up monitoring.",
+    "metadata": {
+      "configuration_item": "Location Services Experience",
+      "priority": "1 - Critical",
+      "location": "SU - Sun Princess",
+      "assignment_group": "PQR - Location Services",
+      "impact": "1 - Extensive / Widespread",
+      "resolution_code": "Restart / Re-Deploy",
+      "incident_state": "Closed",
+      "category": "Infrastructure"
+    }
+  },
+  {
+    "ticket_id": "INC0427522",
+    "text": "Ticket INC0427522 \u2014 Infrastructure, 1 - Critical, RP - Royal Princess\nRP - Storm supervisor connectivity degraded fleet-wide, BLE gateway firmware fault\nLocation services connectivity degraded fleet-wide on RP. Infrastructure monitoring traced intermittent connection drops to a firmware fault affecting several BLE gateways feeding the positioning platform.\nResolution: The issue was resolved by rebooting the affected BLE gateways on RP, clearing the firmware fault. Positioning traffic was stable through 30 minutes of monitoring afterward. A firmware update addressing the defect has been scheduled fleet-wide.",
+    "metadata": {
+      "location": "RP - Royal Princess",
+      "category": "Infrastructure",
+      "configuration_item": "Location Services Experience",
+      "priority": "1 - Critical",
+      "impact": "2 - Significant / Large",
+      "resolution_code": "Cleared by Monitoring System",
+      "assignment_group": "PQR - Location Services",
+      "incident_state": "Closed"
+    }
+  },
+  {
+    "ticket_id": "INC0085307",
+    "text": "Ticket INC0085307 \u2014 User Access & Authentication, 1 - Critical, ST - Star Princess\nST - Guest unable to log in to OceanNow ordering profile\nA guest on ST reported being unable to log in to their OceanNow ordering profile, receiving an authentication error each time despite entering the correct credentials.\nResolution: The issue was resolved by manually re-linking the guest's OceanNow profile to their main account on ST. Login succeeded immediately afterward with order history intact.",
+    "metadata": {
+      "category": "User Access & Authentication",
+      "priority": "1 - Critical",
+      "impact": "1 - Extensive / Widespread",
+      "location": "ST - Star Princess",
+      "configuration_item": "OceanNow",
+      "assignment_group": "PQR - ABC",
+      "resolution_code": "Resolved by caller",
+      "incident_state": "Closed"
+    }
+  },
+  {
+    "ticket_id": "INC0431595",
+    "text": "Ticket INC0431595 \u2014 Hardware, 1 - Critical, CB - Caribbean Princess\nCB - Location reader hardware fault preventing guests from viewing Safety Essentials\nGuests on CB reported the Safety Essentials video would not register as viewed through the location app. Physical inspection found a reader controller board fault on the affected deck.\nResolution: The issue was resolved by replacing the failed reader controller board on CB with a spare unit. Readers came back online immediately and Safety Essentials check-ins resumed registering correctly.",
+    "metadata": {
+      "incident_state": "Closed",
+      "priority": "1 - Critical",
+      "configuration_item": "Location Services Experience",
+      "resolution_code": "Resolved - Fixed Without Action",
+      "assignment_group": "PQR - Location Services",
+      "impact": "2 - Significant / Large",
+      "category": "Hardware",
+      "location": "CB - Caribbean Princess"
+    }
+  },
+  {
+    "ticket_id": "INC0253986",
+    "text": "Ticket INC0253986 \u2014 Hardware, 1 - Critical, SU - Sun Princess\nSU - Samsung stateroom TVs going to black screen after watching the Sky Sports channel\nGuests on SU reported Samsung stateroom TVs going to a black screen after watching the Sky Sports channel, requiring a power cycle to restore picture. Hardware diagnostics confirmed the same HDMI switching chip defect as other affected channels.\nResolution: The issue was resolved by applying the vendor firmware workaround to the affected TV units on SU. Black screen no longer reproduces after watching Sky Sports. These units remain on the vendor's permanent-fix tracking list.",
+    "metadata": {
+      "resolution_code": "Resolved - Workaround Applied",
+      "category": "Hardware",
+      "impact": "2 - Significant / Large",
+      "priority": "1 - Critical",
+      "assignment_group": "PQR - Media Services",
+      "incident_state": "Closed",
+      "configuration_item": "Stateroom Experience",
+      "location": "SU - Sun Princess"
+    }
+  },
+  {
+    "ticket_id": "INC0263511",
+    "text": "Ticket INC0263511 \u2014 Application, 1 - Critical, RP - Royal Princess\nRP - Multiple ABC app errors traced to excursions dependency timing out\nGuests on RP reported intermittent errors while using various features of the ABC app. Application monitoring traced the errors to the shore-excursions booking dependency timing out under load.\nResolution: The issue was resolved by adjusting the excursions dependency's connection-timeout setting and redeploying the affected services on RP. Error rates returned to baseline afterward. The timeout setting will be reviewed as part of the next capacity planning cycle.",
+    "metadata": {
+      "configuration_item": "ABC (Ocean - ABC)",
+      "impact": "2 - Significant / Large",
+      "priority": "1 - Critical",
+      "assignment_group": "PQR - ABC",
+      "category": "Application",
+      "resolution_code": "Restart / Re-Deploy",
+      "incident_state": "Closed",
+      "location": "RP - Royal Princess"
+    }
+  },
+  {
+    "ticket_id": "INC0086930",
+    "text": "Ticket INC0086930 \u2014 Database, 1 - Critical, SA - Sapphire Princess\nSA - Stateroom transfer requests failing on ABC app, database write contention\nGuests attempting to transfer a booking to a different stateroom category reported the request failing to save on SA. Database monitoring identified write contention on the stateroom-transfer table during the affected window.\nResolution: The issue was resolved by killing the blocking query and redeploying the affected ABC service instance on SA. Stateroom transfers began saving successfully immediately after the fix. The inventory-sync process has been rescheduled to avoid future write contention.",
+    "metadata": {
+      "category": "Database",
+      "resolution_code": "Restart / Re-Deploy",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "priority": "1 - Critical",
+      "location": "SA - Sapphire Princess",
+      "assignment_group": "PQR - ABC",
+      "incident_state": "Closed",
+      "impact": "1 - Extensive / Widespread"
+    }
+  },
+  {
+    "ticket_id": "INC0182844",
+    "text": "Ticket INC0182844 \u2014 Infrastructure, 1 - Critical, RU - Ruby Princess\nRU - Location services responding slowly, readers intermittently offline after firmware update\nFollowing a reader firmware update on RU, location services began responding slowly, with readers intermittently dropping offline for several seconds at a time.\nResolution: The issue was resolved by restarting the positioning platform's core services and rolling back the reader firmware to the prior stable version on RU. Reader stability returned to normal immediately. The new firmware version has been held back pending further vendor testing.",
+    "metadata": {
+      "assignment_group": "PQR - Location Services",
+      "priority": "1 - Critical",
+      "resolution_code": "Restart / Re-Deploy",
+      "category": "Infrastructure",
+      "incident_state": "Closed",
+      "impact": "2 - Significant / Large",
+      "location": "RU - Ruby Princess",
+      "configuration_item": "Location Services Experience"
+    }
+  },
+  {
+    "ticket_id": "INC0055614",
+    "text": "Ticket INC0055614 \u2014 Security, 1 - Critical, CB - Caribbean Princess\nCB - Repeated failed payment attempts on ABC app flagged as possible card testing\nThe fraud-monitoring system flagged a pattern of repeated failed payment attempts against a single stateroom account on CB, consistent with automated card-testing behaviour, and the security team was engaged to review the activity.\nResolution: The activity on CB was confirmed as card-testing fraud rather than guest error, and payment capability on the account was suspended and later restored once the pattern was blocked at the payment processor. The guest's account was not charged for any of the failed attempts.",
+    "metadata": {
+      "resolution_code": "Resolved by caller",
+      "category": "Security",
+      "priority": "1 - Critical",
+      "location": "CB - Caribbean Princess",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "impact": "2 - Significant / Large",
+      "assignment_group": "PQR - ABC",
+      "incident_state": "Closed"
+    }
+  },
+  {
+    "ticket_id": "INC0060697",
+    "text": "Ticket INC0060697 \u2014 User Access & Authentication, 1 - Critical, ST - Star Princess\nST - Crew unable to log in to CrewCall Chat with newly issued crew ID\nCrew members on ST issued a new crew ID card this voyage were unable to log in to CrewCall Chat; the app rejected their credentials as invalid even though the ID was active in the crew system.\nResolution: The issue was resolved by deploying a fix so CrewCall Chat validates against the current crew ID format rather than a cached list on ST. Affected crew were able to log in immediately afterward.",
+    "metadata": {
+      "category": "User Access & Authentication",
+      "location": "ST - Star Princess",
+      "incident_state": "Closed",
+      "assignment_group": "PQR - Portals",
+      "impact": "1 - Extensive / Widespread",
+      "configuration_item": "CrewCall Chat",
+      "priority": "1 - Critical",
+      "resolution_code": "Resolved - Permanent Fix Applied"
+    }
+  },
+  {
+    "ticket_id": "INC0054732",
+    "text": "Ticket INC0054732 \u2014 Infrastructure, 1 - Critical, GP - Regal Princess\nGP - Wayfinding kiosks near the atrium not loading deck maps\nGuests reported wayfinding kiosks near the atrium on GP stuck on a loading spinner, while kiosks elsewhere displayed normally. Infrastructure monitoring traced the issue to a network segment serving that zone experiencing intermittent latency.\nResolution: The issue was resolved by restarting the networking equipment serving the atrium zone on GP. Kiosks in that zone resumed loading deck maps normally immediately afterward.",
+    "metadata": {
+      "incident_state": "Closed",
+      "assignment_group": "PQR - Portals",
+      "priority": "1 - Critical",
+      "configuration_item": "Wayfinding Experience",
+      "location": "GP - Regal Princess",
+      "impact": "2 - Significant / Large",
+      "category": "Infrastructure",
+      "resolution_code": "Resolved - Fixed Without Action"
+    }
+  },
+  {
+    "ticket_id": "INC0421835",
+    "text": "Ticket INC0421835 \u2014 Other / Service Request, 1 - Critical, RP - Royal Princess\nRP - Preventive maintenance request for media01.rp.ocean.com power redundancy\nFollowing a power supply unit failure on media01.rp.ocean.com on RP, a preventive maintenance service request was raised to inspect and proactively replace ageing power components across similar hosts before they fail.\nResolution: The immediate power supply unit failure on media01.rp.ocean.com was resolved by the vendor's replacement, and a proactive maintenance plan has been scheduled to inspect similar hosts before they experience the same failure.",
+    "metadata": {
+      "location": "RP - Royal Princess",
+      "resolution_code": "3rd Party/ Vendor Support",
+      "incident_state": "Closed",
+      "priority": "1 - Critical",
+      "assignment_group": "PQR - Platform Ops",
+      "configuration_item": "media01.rp.ocean.com",
+      "category": "Other / Service Request",
+      "impact": "2 - Significant / Large"
+    }
+  },
+  {
+    "ticket_id": "INC0435651",
+    "text": "Ticket INC0435651 \u2014 Infrastructure, 1 - Critical, RU - Ruby Princess\nRU - Positioning platform process on media01.ru.ocean.com restarting in a loop\nThe positioning platform's core process on media01.ru.ocean.com began restarting repeatedly on RU, with location readers dropping in and out during each cycle.\nResolution: The issue was resolved by restarting the positioning process with an increased heap allocation on media01.ru.ocean.com. The restart loop stopped and readers on RU remained stable throughout follow-up monitoring.",
+    "metadata": {
+      "priority": "1 - Critical",
+      "impact": "2 - Significant / Large",
+      "assignment_group": "PQR - Location Services",
+      "resolution_code": "Restart / Re-Deploy",
+      "configuration_item": "Location Services Experience",
+      "category": "Infrastructure",
+      "location": "RU - Ruby Princess",
+      "incident_state": "Closed"
+    }
+  },
+  {
+    "ticket_id": "INC0630400",
+    "text": "Ticket INC0630400 \u2014 User Access & Authentication, 1 - Critical, YP - Sky Princess\nYP - Guest unable to authenticate to OceanNow app with saved biometric login\nA guest on YP reported that Face ID login to the OceanNow app stopped working after their session expired, forcing them to re-enter their password despite biometric login being enabled.\nResolution: ",
+    "metadata": {
+      "incident_state": "New",
+      "location": "YP - Sky Princess",
+      "impact": "2 - Significant / Large",
+      "resolution_code": "",
+      "category": "User Access & Authentication",
+      "priority": "1 - Critical",
+      "configuration_item": "OceanNow",
+      "assignment_group": "PQR - ABC"
+    }
+  },
+  {
+    "ticket_id": "INC0104905",
+    "text": "Ticket INC0104905 \u2014 Database, 1 - Critical, RU - Ruby Princess\nRU - Loyalty point balances not updating on ABC app, database lock on ledger table\nMultiple guests on RU reported that points earned from onboard purchases were not reflecting in their loyalty balance within the ABC app. Database monitoring showed an aggregate query against the loyalty ledger table holding a lock and delaying point-update writes.\nResolution: The issue was resolved by terminating the blocking analytics query and redeploying the loyalty service on RU. Point balances updated correctly for all affected guests shortly after. Ad-hoc analytics jobs will now run against a read replica to avoid contending with production writes.",
+    "metadata": {
+      "impact": "1 - Extensive / Widespread",
+      "location": "RU - Ruby Princess",
+      "assignment_group": "PQR - ABC",
+      "resolution_code": "Restart / Re-Deploy",
+      "incident_state": "Closed",
+      "category": "Database",
+      "priority": "1 - Critical",
+      "configuration_item": "ABC (Ocean - ABC)"
+    }
+  },
+  {
+    "ticket_id": "INC0088457",
+    "text": "Ticket INC0088457 \u2014 Application, 1 - Critical, RU - Ruby Princess\nRU - Multiple ABC app errors traced to payments dependency timing out\nGuests on RU reported errors across several unrelated sections of the ABC app. Application monitoring showed the payments gateway dependency timing out under load, with the resulting retries cascading into errors on other services.\nResolution: The issue was resolved by rolling back the payments-gateway timeout configuration and redeploying the affected services on RU. Error rates across the app returned to normal shortly after. Change review procedures have been reinforced for gateway configuration updates.",
+    "metadata": {
+      "location": "RU - Ruby Princess",
+      "incident_state": "Closed",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "priority": "1 - Critical",
+      "impact": "2 - Significant / Large",
+      "category": "Application",
+      "assignment_group": "PQR - ABC",
+      "resolution_code": "Restart / Re-Deploy"
+    }
+  },
+  {
+    "ticket_id": "INC0660236",
+    "text": "Ticket INC0660236 \u2014 Hardware, 1 - Critical, RP - Royal Princess\nRP - Location reader hardware fault preventing guests from viewing Safety Essentials\nGuests on RP reported being unable to complete Safety Essentials check-in through the location app. Physical inspection identified a battery fault on a set of battery-powered readers.\nResolution: ",
+    "metadata": {
+      "resolution_code": "",
+      "category": "Hardware",
+      "location": "RP - Royal Princess",
+      "priority": "1 - Critical",
+      "impact": "2 - Significant / Large",
+      "assignment_group": "PQR - Location Services",
+      "incident_state": "In Progress",
+      "configuration_item": "Location Services Experience"
+    }
+  },
+  {
+    "ticket_id": "INC0200044",
+    "text": "Ticket INC0200044 \u2014 Application, 1 - Critical, AP - Grand Princess\nAP - Samsung stateroom TVs going to black screen after watching the Sky Sports channel\nGuests on AP reported Samsung stateroom TVs going to a black screen after the Sky Sports channel. Application logs on the affected units showed the same media client crash pattern seen on other channels.\nResolution: The issue was resolved by rolling back the stateroom media client to the previous stable version on AP. Black screen no longer reproduces after Sky Sports. These units are included in the permanent client-fix rollout.",
+    "metadata": {
+      "impact": "2 - Significant / Large",
+      "category": "Application",
+      "assignment_group": "PQR - Media Services",
+      "resolution_code": "Resolved - Workaround Applied",
+      "priority": "1 - Critical",
+      "configuration_item": "Stateroom Experience",
+      "location": "AP - Grand Princess",
+      "incident_state": "Closed"
+    }
+  },
+  {
+    "ticket_id": "INC0426380",
+    "text": "Ticket INC0426380 \u2014 User Access & Authentication, 1 - Critical, RU - Ruby Princess\nRU - Guest unable to log in to ABC app with saved biometric credentials\nA guest on RU reported that Face ID login to the ABC app stopped working after their session expired, forcing them to re-enter their password each time despite biometric login being enabled.\nResolution: The issue was resolved by manually refreshing the guest's biometric authentication token on RU. Face ID login worked reliably afterward. A fix for the biometric token-refresh gap has been queued for the next app release.",
+    "metadata": {
+      "configuration_item": "ABC (Ocean - ABC)",
+      "resolution_code": "Resolved by caller",
+      "category": "User Access & Authentication",
+      "location": "RU - Ruby Princess",
+      "impact": "1 - Extensive / Widespread",
+      "incident_state": "Closed",
+      "priority": "1 - Critical",
+      "assignment_group": "PQR - ABC"
+    }
+  },
+  {
+    "ticket_id": "INC0291811",
+    "text": "Ticket INC0291811 \u2014 Infrastructure, 1 - Critical, AP - Grand Princess\nAP - GuestView and location services degraded, message-queue consumer lag\nGuestView map rendering and location services were degraded on AP. Infrastructure monitoring showed the positioning platform's message-queue consumer falling several minutes behind, delaying guest position updates.\nResolution: The issue was resolved by scaling up the message-queue consumer group on AP. GuestView position updates caught up to real time within about 10 minutes. Consumer capacity has been reviewed to better match peak message volume.",
+    "metadata": {
+      "configuration_item": "Location Services Experience",
+      "category": "Infrastructure",
+      "impact": "2 - Significant / Large",
+      "incident_state": "Closed",
+      "priority": "1 - Critical",
+      "location": "AP - Grand Princess",
+      "resolution_code": "Resolved - Permanent Fix Applied",
+      "assignment_group": "PQR - Location Services"
+    }
+  },
+  {
+    "ticket_id": "INC0630030",
+    "text": "Ticket INC0630030 \u2014 User Access & Authentication, 2 - High, SA - Sapphire Princess\nSA - Crew logged out of CrewCall Chat unexpectedly mid-shift\nCrew on SA were being logged out of CrewCall Chat mid-shift without warning, and re-login occasionally failed on the first attempt. Authentication logs showed the session token expiring earlier than configured.\nResolution: The issue was resolved by correcting the session-token expiry configuration on SA. Crew sessions remained active for the full shift immediately after the fix was deployed.",
+    "metadata": {
+      "impact": "2 - Significant / Large",
+      "resolution_code": "Resolved - Permanent Fix Applied",
+      "configuration_item": "CrewCall Chat",
+      "assignment_group": "PQR - Portals",
+      "incident_state": "Closed",
+      "priority": "2 - High",
+      "location": "SA - Sapphire Princess",
+      "category": "User Access & Authentication"
+    }
+  },
+  {
+    "ticket_id": "INC0274935",
+    "text": "Ticket INC0274935 \u2014 Infrastructure, 2 - High, YP - Sky Princess\nYP - Stateroom VOD playback buffering for guests during peak evening hours\nGuests on YP reported VOD buffering specifically during the 8-10pm peak viewing window. Infrastructure monitoring correlated the buffering with satellite bandwidth contention from other onboard services during the same window.\nResolution: The issue was resolved by temporarily de-prioritising non-entertainment traffic during the peak viewing window on YP. VOD buffering reports dropped significantly afterward. Bandwidth allocation policy is being reviewed for a longer-term fix.",
+    "metadata": {
+      "incident_state": "Closed",
+      "category": "Infrastructure",
+      "assignment_group": "PQR - Media Services",
+      "priority": "2 - High",
+      "configuration_item": "Stateroom Experience",
+      "location": "YP - Sky Princess",
+      "resolution_code": "Resolved - Workaround Applied",
+      "impact": "2 - Significant / Large"
+    }
+  },
+  {
+    "ticket_id": "INC0406352",
+    "text": "Ticket INC0406352 \u2014 Infrastructure, 2 - High, RU - Ruby Princess\nRU - Wayfinding kiosks not loading deck maps after itinerary content push\nFollowing a scheduled itinerary content push, wayfinding kiosks on RU were stuck loading and not displaying any deck map. Infrastructure monitoring found the content distribution service had not finished propagating the update.\nResolution: The issue was resolved by restarting the content distribution service on RU, allowing the stalled itinerary push to complete. Kiosks resumed loading deck maps normally once propagation finished.",
+    "metadata": {
+      "resolution_code": "Resolved - Fixed Without Action",
+      "incident_state": "Closed",
+      "assignment_group": "PQR - Portals",
+      "configuration_item": "Wayfinding Experience",
+      "location": "RU - Ruby Princess",
+      "impact": "2 - Significant / Large",
+      "priority": "2 - High",
+      "category": "Infrastructure"
+    }
+  },
+  {
+    "ticket_id": "INC0661524",
+    "text": "Ticket INC0661524 \u2014 Other / Service Request, 2 - High, RP - Royal Princess\nRP - Guest requesting promo code be manually applied to OceanNow order\nA guest on RP submitted a service request asking for a promo code to be manually applied to an OceanNow order after it failed to apply automatically at checkout.\nResolution: The requested promo code discount was manually applied to the guest's folio on RP after the automatic application failed at checkout. The guest was notified once the correction was confirmed.",
+    "metadata": {
+      "resolution_code": "Resolved by caller",
+      "category": "Other / Service Request",
+      "priority": "2 - High",
+      "incident_state": "Closed",
+      "location": "RP - Royal Princess",
+      "impact": "2 - Significant / Large",
+      "configuration_item": "OceanNow",
+      "assignment_group": "PQR - ABC"
+    }
+  },
+  {
+    "ticket_id": "INC0303284",
+    "text": "Ticket INC0303284 \u2014 Hardware, 2 - High, SA - Sapphire Princess\nSA - Location reader intermittently drops out due to damaged antenna, guests unable to check in\nGuests on SA reported Safety Essentials check-in failing intermittently through the location app. Physical inspection found a damaged antenna on one reader unit causing intermittent range issues.\nResolution: The issue was resolved by replacing the reader unit with a damaged antenna on SA with a spare from onboard inventory. Check-ins registered consistently afterward, and the damaged unit has been logged for vendor repair.",
+    "metadata": {
+      "incident_state": "Closed",
+      "configuration_item": "Location Services Experience",
+      "priority": "2 - High",
+      "location": "SA - Sapphire Princess",
+      "impact": "2 - Significant / Large",
+      "resolution_code": "Resolved - Fixed Without Action",
+      "assignment_group": "PQR - Location Services",
+      "category": "Hardware"
+    }
+  },
+  {
+    "ticket_id": "INC0049670",
+    "text": "Ticket INC0049670 \u2014 Application, 2 - High, CB - Caribbean Princess\nCB - Samsung stateroom TVs going to black screen after watching the CNN channel\nGuests on CB reported Samsung stateroom TVs going to a black screen after the CNN channel. Unlike similar hardware-related reports, application logs on these units showed a media client software crash rather than a hardware fault.\nResolution: The issue was resolved by rolling the stateroom media client back to the previous stable version on CB. The black-screen issue after CNN no longer reproduces. A permanent fix for the channel-teardown defect has been queued for the next client release.",
+    "metadata": {
+      "impact": "3 - Moderate / Limited",
+      "priority": "2 - High",
+      "configuration_item": "Stateroom Experience",
+      "assignment_group": "PQR - Media Services",
+      "incident_state": "Closed",
+      "category": "Application",
+      "resolution_code": "Resolved - Workaround Applied",
+      "location": "CB - Caribbean Princess"
+    }
+  },
+  {
+    "ticket_id": "INC0531826",
+    "text": "Ticket INC0531826 \u2014 Security, 2 - High, CB - Caribbean Princess\nCB - Unusual traffic spike investigated on ABC checkout service during dinner-hour login surge\nThe security team was alerted to an unusual spike in checkout-session creation on the ABC app during the dinner-hour period on CB, resembling patterns seen in automated abuse attempts. Application capacity alerts were triggered as thread pools filled during the review.\nResolution: The security review concluded the traffic spike on CB was legitimate dinner-hour demand rather than malicious activity, and was resolved operationally by increasing the checkout service's capacity. Monitoring thresholds have been adjusted to reduce false-positive alerts during known peak periods.",
+    "metadata": {
+      "category": "Security",
+      "priority": "2 - High",
+      "resolution_code": "Restart / Re-Deploy",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "location": "CB - Caribbean Princess",
+      "assignment_group": "PQR - ABC",
+      "incident_state": "Closed",
+      "impact": "3 - Moderate / Limited"
+    }
+  },
+  {
+    "ticket_id": "INC0436383",
+    "text": "Ticket INC0436383 \u2014 Hardware, 2 - High, GP - Regal Princess\nGP - app03.gp.ocean.com unreachable, failed network interface card\napp03.gp.ocean.com became unreachable on GP. On-site hardware diagnostics confirmed the server's primary network interface card had failed and was not negotiating a link.\nResolution: The issue was resolved by having the vendor replace the failed network interface card on app03.gp.ocean.com. The host was reachable again immediately after the hardware swap and reboot.",
+    "metadata": {
+      "assignment_group": "PQR - Platform Ops",
+      "category": "Hardware",
+      "configuration_item": "app03.gp.ocean.com",
+      "resolution_code": "3rd Party/ Vendor Support",
+      "priority": "2 - High",
+      "impact": "3 - Moderate / Limited",
+      "incident_state": "Closed",
+      "location": "GP - Regal Princess"
+    }
+  },
+  {
+    "ticket_id": "INC0163146",
+    "text": "Ticket INC0163146 \u2014 Infrastructure, 2 - High, MJ - Majestic Princess\nMJ - Location beacon gateway service unresponsive fleet-wide, expired authentication token\nThe BLE beacon gateway service on MJ stopped responding to reader polling requests fleet-wide. Infrastructure monitoring found the gateway's service-to-service authentication token had expired without being automatically renewed.\nResolution: The issue was resolved by manually renewing the expired authentication token and redeploying the beacon gateway service on MJ. All readers reconnected within a few minutes. Automatic token renewal is being reviewed to prevent a recurrence.",
+    "metadata": {
+      "location": "MJ - Majestic Princess",
+      "assignment_group": "PQR - Location Services",
+      "incident_state": "Closed",
+      "configuration_item": "Location Services Experience",
+      "resolution_code": "Restart / Re-Deploy",
+      "category": "Infrastructure",
+      "impact": "2 - Significant / Large",
+      "priority": "2 - High"
+    }
+  },
+  {
+    "ticket_id": "INC0603093",
+    "text": "Ticket INC0603093 \u2014 Database, 2 - High, RP - Royal Princess\nRP - Specialty dining charges not posting to stateroom folio, delayed database sync\nGuests on RP who booked specialty dining reported the charge was missing from their stateroom folio even though the reservation was confirmed. Investigation traced the gap to a delayed sync between the dining and billing databases.\nResolution: The issue was resolved by manually running the dining-to-billing sync job to clear the backlog on RP. Folio charges appeared correctly for all affected guests. The sync job has been updated to match the new schema to prevent recurrence.",
+    "metadata": {
+      "category": "Database",
+      "impact": "2 - Significant / Large",
+      "assignment_group": "PQR - ABC",
+      "location": "RP - Royal Princess",
+      "priority": "2 - High",
+      "incident_state": "Closed",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "resolution_code": "Resolved by caller"
+    }
+  },
+  {
+    "ticket_id": "INC0275701",
+    "text": "Ticket INC0275701 \u2014 Application, 2 - High, YP - Sky Princess\nYP - Loyalty module in ABC app repeatedly restarting after recent deployment\nThe loyalty module of the ABC app on YP began restarting repeatedly, intermittently blocking guests from viewing their points balance. Application logs pointed to an unhandled exception introduced in the latest release.\nResolution: The issue was resolved by rolling back the loyalty module to the previous release on YP. The restart loop stopped immediately. A fix for the tier-calculation exception has been queued for the next deployment.",
+    "metadata": {
+      "assignment_group": "PQR - ABC",
+      "incident_state": "Closed",
+      "impact": "2 - Significant / Large",
+      "category": "Application",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "priority": "2 - High",
+      "location": "YP - Sky Princess",
+      "resolution_code": "Restart / Re-Deploy"
+    }
+  },
+  {
+    "ticket_id": "INC0057338",
+    "text": "Ticket INC0057338 \u2014 Other / Service Request, 2 - High, AP - Grand Princess\nAP - Guest requesting manual refund review for duplicate ABC app charge\nA guest on AP submitted a service request asking for a manual review of what appeared to be a duplicate charge for a single booking made through the ABC app.\nResolution: The duplicate charge on AP was confirmed and reversed by the billing team, and the guest's folio was updated to reflect a single correct charge. The guest was notified once the correction was confirmed.",
+    "metadata": {
+      "assignment_group": "PQR - ABC",
+      "priority": "2 - High",
+      "impact": "2 - Significant / Large",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "resolution_code": "Restart / Re-Deploy",
+      "location": "AP - Grand Princess",
+      "incident_state": "Closed",
+      "category": "Other / Service Request"
+    }
+  },
+  {
+    "ticket_id": "INC0888547",
+    "text": "Ticket INC0888547 \u2014 Application, 2 - High, YP - Sky Princess\nYP - Multiple ABC app errors traced to notifications dependency retry storm\nGuests on YP experienced intermittent failures across the ABC app. Application monitoring found the push-notifications dependency timing out, and the resulting retry storm was saturating shared worker threads used by other features.\nResolution: The issue was resolved by temporarily disabling retries against the notifications dependency and redeploying affected services on YP. Worker thread availability recovered immediately. A circuit breaker is being added so a degraded dependency cannot saturate shared resources again.",
+    "metadata": {
+      "incident_state": "Resolved",
+      "assignment_group": "PQR - ABC",
+      "resolution_code": "Restart / Re-Deploy",
+      "priority": "2 - High",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "location": "YP - Sky Princess",
+      "impact": "3 - Moderate / Limited",
+      "category": "Application"
+    }
+  },
+  {
+    "ticket_id": "INC0224420",
+    "text": "Ticket INC0224420 \u2014 User Access & Authentication, 2 - High, RU - Ruby Princess\nRU - Crew unable to log in to CrewCall Chat from personal devices\nCrew on RU using their personal devices were unable to log in to CrewCall Chat, while company-issued devices worked normally. Authentication logs showed the device-registration step silently failing for personal device profiles.\nResolution: The issue was resolved by fixing the device-registration path for personal device profiles on RU. Affected crew confirmed successful login from their personal devices immediately after the fix.",
+    "metadata": {
+      "configuration_item": "CrewCall Chat",
+      "incident_state": "Closed",
+      "resolution_code": "Resolved - Permanent Fix Applied",
+      "priority": "2 - High",
+      "impact": "2 - Significant / Large",
+      "location": "RU - Ruby Princess",
+      "assignment_group": "PQR - Portals",
+      "category": "User Access & Authentication"
+    }
+  },
+  {
+    "ticket_id": "INC0514985",
+    "text": "Ticket INC0514985 \u2014 Hardware, 2 - High, RP - Royal Princess\nRP - rpdcwnmtlic001.rp.ocean.com unreachable, motherboard/BMC fault\nrpdcwnmtlic001.rp.ocean.com became unreachable on RP and would not power back on cleanly. Remote vendor diagnostics identified a fault on the server's motherboard/BMC.\nResolution: The issue was resolved after the vendor replaced the faulty motherboard on rpdcwnmtlic001.rp.ocean.com during an on-site visit. The host came back online and remained stable afterward.",
+    "metadata": {
+      "category": "Hardware",
+      "priority": "2 - High",
+      "resolution_code": "3rd Party/ Vendor Support",
+      "assignment_group": "PQR - Platform Ops",
+      "incident_state": "Closed",
+      "impact": "3 - Moderate / Limited",
+      "location": "RP - Royal Princess",
+      "configuration_item": "rpdcwnmtlic001.rp.ocean.com"
+    }
+  },
+  {
+    "ticket_id": "INC0449909",
+    "text": "Ticket INC0449909 \u2014 Application, 2 - High, CB - Caribbean Princess\nCB - Wayfinding kiosk touchscreens on forward decks unresponsive to taps\nWayfinding kiosks specifically on the forward decks of CB displayed the deck map correctly but did not respond to any touchscreen taps. Application logs showed the touch-input handler had stopped processing events on the affected units.\nResolution: The issue was resolved by deploying a fix for the touch-input handler and restarting the affected kiosk application on CB. Touchscreen response was restored on the forward-deck kiosks immediately afterward.",
+    "metadata": {
+      "configuration_item": "Wayfinding Experience",
+      "location": "CB - Caribbean Princess",
+      "priority": "2 - High",
+      "category": "Application",
+      "incident_state": "Closed",
+      "resolution_code": "Resolved - Fixed Without Action",
+      "impact": "2 - Significant / Large",
+      "assignment_group": "PQR - Portals"
+    }
+  },
+  {
+    "ticket_id": "INC0820164",
+    "text": "Ticket INC0820164 \u2014 Application, 2 - High, MJ - Majestic Princess\nMJ - OceanNow app shows empty menu for guest's ship\nA guest on MJ reported the OceanNow app showing a completely empty menu with no items available to order, across all venues. Application logs showed the menu-cache service had not repopulated after a scheduled restart.\nResolution: The issue was resolved once the menu-cache service on MJ finished repopulating after a manual trigger. The guest confirmed the full menu loaded correctly afterward. The restart process has been updated to avoid serving requests before the cache is ready.",
+    "metadata": {
+      "assignment_group": "PQR - ABC",
+      "location": "MJ - Majestic Princess",
+      "impact": "2 - Significant / Large",
+      "incident_state": "Closed",
+      "configuration_item": "OceanNow",
+      "resolution_code": "Resolved by caller",
+      "priority": "2 - High",
+      "category": "Application"
+    }
+  },
+  {
+    "ticket_id": "INC0839242",
+    "text": "Ticket INC0839242 \u2014 Hardware, 2 - High, AP - Grand Princess\nAP - Location beacon gateway hardware fault causing fleet-wide reader outage\nThe BLE beacon gateway hardware on AP failed, taking reader connectivity offline fleet-wide. On-site diagnostics confirmed a fault in the gateway's radio module rather than a software or network issue.\nResolution: The issue was resolved by replacing the faulty beacon gateway unit on AP with a spare from onboard inventory. Readers reconnected immediately after the swap. The faulty unit has been logged for vendor replacement at the next port call.",
+    "metadata": {
+      "assignment_group": "PQR - Location Services",
+      "configuration_item": "Location Services Experience",
+      "category": "Hardware",
+      "resolution_code": "Restart / Re-Deploy",
+      "location": "AP - Grand Princess",
+      "impact": "3 - Moderate / Limited",
+      "incident_state": "Closed",
+      "priority": "2 - High"
+    }
+  },
+  {
+    "ticket_id": "INC0253333",
+    "text": "Ticket INC0253333 \u2014 Database, 2 - High, SU - Sun Princess\nSU - Guest check-in records not syncing to location database\nGuest muster check-in records on SU were not appearing in the central location database even though the reader confirmed a successful scan. Investigation identified a write failure between the reader network and the backend database.\nResolution: The issue was resolved by manually reprocessing the failed batch write job on SU. All affected check-in records appeared correctly in the database afterward. Error handling for the batch write job has been improved so failures no longer occur silently.",
+    "metadata": {
+      "location": "SU - Sun Princess",
+      "resolution_code": "Resolved - Fixed Without Action",
+      "incident_state": "Closed",
+      "configuration_item": "Location Services Experience",
+      "category": "Database",
+      "impact": "2 - Significant / Large",
+      "assignment_group": "PQR - Location Services",
+      "priority": "2 - High"
+    }
+  },
+  {
+    "ticket_id": "INC0101429",
+    "text": "Ticket INC0101429 \u2014 Hardware, 2 - High, RU - Ruby Princess\nRU - Samsung stateroom TVs going to black screen after watching the BBC World channel\nGuests on RU reported Samsung stateroom TVs going to a black screen specifically after the BBC World channel, with no picture returning until the TV was restarted. Hardware diagnostics found the same HDMI switching chip defect as a related channel-change issue.\nResolution: The issue was resolved by applying the existing HDMI switching chip workaround to the newly affected TV units on RU. Black screen no longer reproduces for the BBC World channel change. These units have been added to the vendor's permanent-fix tracking list.",
+    "metadata": {
+      "priority": "2 - High",
+      "assignment_group": "PQR - Media Services",
+      "configuration_item": "Stateroom Experience",
+      "location": "RU - Ruby Princess",
+      "impact": "2 - Significant / Large",
+      "incident_state": "Closed",
+      "category": "Hardware",
+      "resolution_code": "Resolved - Workaround Applied"
+    }
+  },
+  {
+    "ticket_id": "INC0277491",
+    "text": "Ticket INC0277491 \u2014 Security, 2 - High, GP - Regal Princess\nGP - Guest reports ABC app account accessed from unrecognized device\nA guest on GP reported receiving a login notification for their ABC app account from a device they did not recognise. The security team was engaged to review the account for unauthorized access.\nResolution: The security review on GP confirmed unauthorized access to the guest's account, and all sessions were revoked with a forced password reset and two-factor verification re-enabled. The guest confirmed normal access was restored on their own devices only.",
+    "metadata": {
+      "category": "Security",
+      "assignment_group": "PQR - ABC",
+      "impact": "2 - Significant / Large",
+      "priority": "2 - High",
+      "resolution_code": "Resolved by caller",
+      "location": "GP - Regal Princess",
+      "incident_state": "Closed",
+      "configuration_item": "ABC (Ocean - ABC)"
+    }
+  },
+  {
+    "ticket_id": "INC0617229",
+    "text": "Ticket INC0617229 \u2014 Application, 2 - High, SU - Sun Princess\nSU - CrewCall Chat freezes when switching between department channels\nCrew on SU reported the app freezing for several seconds whenever they switched from one department channel to another. Application logs traced the freeze to an inefficient full reload of channel state on every switch.\nResolution: The issue was resolved by deploying a fix caching channel state locally on SU, removing the need for a full reload on every channel switch. Crew confirmed the freeze no longer occurs.",
+    "metadata": {
+      "priority": "2 - High",
+      "resolution_code": "Resolved - Permanent Fix Applied",
+      "impact": "3 - Moderate / Limited",
+      "assignment_group": "PQR - Portals",
+      "incident_state": "Closed",
+      "location": "SU - Sun Princess",
+      "configuration_item": "CrewCall Chat",
+      "category": "Application"
+    }
+  },
+  {
+    "ticket_id": "INC0193194",
+    "text": "Ticket INC0193194 \u2014 Application, 2 - High, CB - Caribbean Princess\nCB - Wayfinding kiosks near the gangway unresponsive during embarkation rush\nDuring the embarkation-day rush on CB, several wayfinding kiosks near the gangway stopped responding to touch input while displaying the deck map. Application logs showed the kiosk application struggling under an unusually high tap-event rate.\nResolution: The issue was resolved by restarting the affected kiosk applications near the gangway on CB. Touchscreen response was restored for the remainder of the embarkation window. Handling of high-volume tap events is being reviewed for a permanent fix.",
+    "metadata": {
+      "location": "CB - Caribbean Princess",
+      "assignment_group": "PQR - Portals",
+      "priority": "2 - High",
+      "incident_state": "Closed",
+      "resolution_code": "Resolved - Fixed Without Action",
+      "category": "Application",
+      "impact": "2 - Significant / Large",
+      "configuration_item": "Wayfinding Experience"
+    }
+  },
+  {
+    "ticket_id": "INC0080041",
+    "text": "Ticket INC0080041 \u2014 User Access & Authentication, 2 - High, CB - Caribbean Princess\nCB - Guest unable to authenticate to OceanNow app during late-night hours\nA guest on CB reported being unable to log in to the OceanNow app specifically during late-night hours, while daytime login worked normally. Authentication logs showed login requests failing during a nightly maintenance window on the authentication service.\nResolution: The issue was resolved by rescheduling the authentication service's nightly maintenance job to a lower-impact window on CB. Login succeeded consistently at all hours afterward.",
+    "metadata": {
+      "impact": "2 - Significant / Large",
+      "configuration_item": "OceanNow",
+      "location": "CB - Caribbean Princess",
+      "priority": "2 - High",
+      "assignment_group": "PQR - ABC",
+      "resolution_code": "Resolved by caller",
+      "incident_state": "Closed",
+      "category": "User Access & Authentication"
+    }
+  },
+  {
+    "ticket_id": "INC0099560",
+    "text": "Ticket INC0099560 \u2014 Database, 2 - High, CB - Caribbean Princess\nCB - Guest positioning data not syncing to location database\nGuests on CB were appearing in the wrong location on the GuestView map. Investigation traced the issue to a database sync delay between the positioning platform and the map-rendering service.\nResolution: The issue was resolved by manually triggering a full resync of positioning data on CB. GuestView reflected correct guest locations immediately afterward. The sync job's processing capacity has been increased to keep pace with peak data volume.",
+    "metadata": {
+      "incident_state": "Closed",
+      "location": "CB - Caribbean Princess",
+      "impact": "2 - Significant / Large",
+      "category": "Database",
+      "configuration_item": "Location Services Experience",
+      "priority": "2 - High",
+      "assignment_group": "PQR - Location Services",
+      "resolution_code": "Resolved - Fixed Without Action"
+    }
+  },
+  {
+    "ticket_id": "INC0446998",
+    "text": "Ticket INC0446998 \u2014 Hardware, 2 - High, ST - Star Princess\nST - Samsung stateroom TVs going to black screen and remote unresponsive after BBC World channel\nGuests on ST reported Samsung stateroom TVs going to a black screen after the BBC World channel ends, with the remote also becoming unresponsive until the TV was unplugged. Hardware diagnostics found the remote's IR receiver was also affected by the same fault condition.\nResolution: The issue was resolved by power-cycling the affected TV units and applying the vendor's firmware workaround on ST. Both picture and remote control returned to normal operation, and the affected units have been flagged for the permanent hardware fix.",
+    "metadata": {
+      "configuration_item": "Stateroom Experience",
+      "assignment_group": "PQR - Media Services",
+      "priority": "2 - High",
+      "category": "Hardware",
+      "resolution_code": "Resolved - Workaround Applied",
+      "location": "ST - Star Princess",
+      "incident_state": "Closed",
+      "impact": "3 - Moderate / Limited"
+    }
+  },
+  {
+    "ticket_id": "INC0394653",
+    "text": "Ticket INC0394653 \u2014 Infrastructure, 2 - High, MJ - Majestic Princess\nMJ - media01.mj.ocean.com disk space alert, orphaned temp files from a stuck transcode job\nmedia01.mj.ocean.com reported low disk space on the C: volume on MJ. Infrastructure investigation found an onboard-entertainment video transcode job had hung, leaving large temporary files behind that were never cleaned up.\nResolution: The issue was resolved by killing the stuck transcode job and clearing roughly 40GB of orphaned temporary files on media01.mj.ocean.com. The job was re-run successfully and disk usage returned under threshold.",
+    "metadata": {
+      "incident_state": "Closed",
+      "resolution_code": "Resolved - Permanent Fix Applied",
+      "assignment_group": "PQR - Platform Ops",
+      "priority": "2 - High",
+      "category": "Infrastructure",
+      "configuration_item": "media01.mj.ocean.com",
+      "impact": "2 - Significant / Large",
+      "location": "MJ - Majestic Princess"
+    }
+  },
+  {
+    "ticket_id": "INC0549170",
+    "text": "Ticket INC0549170 \u2014 Application, 2 - High, RU - Ruby Princess\nRU - Dining reservations module in ABC app repeatedly restarting after recent deployment\nThe dining-reservations module of the ABC app on RU began restarting repeatedly, intermittently preventing guests from booking specialty dining. Application logs showed an unhandled exception introduced in the latest release.\nResolution: The issue was resolved by rolling back the dining reservations module to the previous release on RU. The restart loop stopped immediately and bookings resumed normally. Input validation for party size has been queued as a follow-up fix.",
+    "metadata": {
+      "priority": "2 - High",
+      "impact": "3 - Moderate / Limited",
+      "resolution_code": "Restart / Re-Deploy",
+      "location": "RU - Ruby Princess",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "assignment_group": "PQR - ABC",
+      "incident_state": "Closed",
+      "category": "Application"
+    }
+  },
+  {
+    "ticket_id": "INC0390335",
+    "text": "Ticket INC0390335 \u2014 User Access & Authentication, 2 - High, YP - Sky Princess\nYP - Guest unable to log in to ABC app after switching devices\nA guest on YP reported being unable to log in to the ABC app after switching from their phone to a tablet, receiving an invalid-credentials error despite entering the correct password.\nResolution: The issue was resolved by manually approving the guest's new device on YP. Login succeeded immediately afterward. Guidance on switching devices has been added to the app's help section.",
+    "metadata": {
+      "incident_state": "Closed",
+      "impact": "3 - Moderate / Limited",
+      "location": "YP - Sky Princess",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "resolution_code": "Resolved by caller",
+      "assignment_group": "PQR - ABC",
+      "priority": "2 - High",
+      "category": "User Access & Authentication"
+    }
+  },
+  {
+    "ticket_id": "INC0392515",
+    "text": "Ticket INC0392515 \u2014 Application, 2 - High, ST - Star Princess\nST - Multiple ABC app errors traced to loyalty engine dependency timing out\nGuests on ST reported errors across multiple ABC app features. Application monitoring identified the loyalty-engine dependency timing out intermittently, with errors cascading into unrelated endpoints.\nResolution: The issue was resolved by rolling back the loyalty-engine client's retry configuration and redeploying the affected services on ST. App-wide error rates returned to normal afterward. The retry configuration will be tuned more conservatively before being reintroduced.",
+    "metadata": {
+      "incident_state": "Closed",
+      "location": "ST - Star Princess",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "resolution_code": "Restart / Re-Deploy",
+      "category": "Application",
+      "impact": "3 - Moderate / Limited",
+      "priority": "2 - High",
+      "assignment_group": "PQR - ABC"
+    }
+  },
+  {
+    "ticket_id": "INC0276744",
+    "text": "Ticket INC0276744 \u2014 Security, 2 - High, CB - Caribbean Princess\nCB - CrewCall Chat messages stuck in 'sending' state, expired push-notification certificate\nCrew on CB reported messages in CrewCall Chat getting stuck in a 'sending' state and never being delivered. The security team identified the push-notification service's certificate had expired, and its expiry was not detected in time by monitoring.\nResolution: The issue was resolved by issuing and installing a new certificate for the push-notification service on CB. Message delivery resumed working immediately. Certificate expiry monitoring has been corrected so future renewals trigger automatically ahead of expiry.",
+    "metadata": {
+      "configuration_item": "CrewCall Chat",
+      "location": "CB - Caribbean Princess",
+      "resolution_code": "Resolved - Permanent Fix Applied",
+      "assignment_group": "PQR - Portals",
+      "priority": "2 - High",
+      "incident_state": "Closed",
+      "impact": "2 - Significant / Large",
+      "category": "Security"
+    }
+  },
+  {
+    "ticket_id": "INC0469112",
+    "text": "Ticket INC0469112 \u2014 Application, 2 - High, YP - Sky Princess\nYP - Wayfinding kiosk touchscreen only responds in one corner of the screen\nA guest on YP reported a wayfinding kiosk's touchscreen only registering taps in the bottom-left corner, making the rest of the map unusable. Application logs showed a touch-calibration error specific to that unit.\nResolution: The issue was resolved by running the touch-calibration routine on the affected kiosk on YP. The touchscreen responded correctly across the full screen immediately afterward.",
+    "metadata": {
+      "priority": "2 - High",
+      "resolution_code": "Resolved - Fixed Without Action",
+      "category": "Application",
+      "impact": "2 - Significant / Large",
+      "incident_state": "Closed",
+      "location": "YP - Sky Princess",
+      "assignment_group": "PQR - Portals",
+      "configuration_item": "Wayfinding Experience"
+    }
+  },
+  {
+    "ticket_id": "INC0053687",
+    "text": "Ticket INC0053687 \u2014 User Access & Authentication, 2 - High, YP - Sky Princess\nYP - Guest locked out of OceanNow app after failed payment PIN attempts\nA guest on YP reported being locked out of the OceanNow app after several failed attempts entering their payment PIN, and was unable to self-service unlock the account.\nResolution: The issue was resolved by manually unlocking the guest's account and resetting their payment PIN on YP. The guest was able to log in and place an order successfully afterward.",
+    "metadata": {
+      "location": "YP - Sky Princess",
+      "configuration_item": "OceanNow",
+      "incident_state": "Closed",
+      "category": "User Access & Authentication",
+      "assignment_group": "PQR - ABC",
+      "resolution_code": "Resolved by caller",
+      "priority": "2 - High",
+      "impact": "2 - Significant / Large"
+    }
+  },
+  {
+    "ticket_id": "INC0720517",
+    "text": "Ticket INC0720517 \u2014 Security, 2 - High, CB - Caribbean Princess\nCB - media01.cb.ocean.com unreachable, data integrity review after storage controller fault\nmedia01.cb.ocean.com went offline on CB after a storage subsystem fault. Given the host stored guest media data, the security team reviewed the incident for potential data integrity or exposure concerns alongside the hardware recovery.\nResolution: The storage controller fault on media01.cb.ocean.com was resolved by the vendor replacing the faulty RAID controller and rebuilding the array. The parallel security review confirmed no data integrity or exposure concern, and the host was restored to normal operation.",
+    "metadata": {
+      "priority": "2 - High",
+      "incident_state": "Closed",
+      "location": "CB - Caribbean Princess",
+      "assignment_group": "PQR - Platform Ops",
+      "configuration_item": "media01.cb.ocean.com",
+      "impact": "3 - Moderate / Limited",
+      "category": "Security",
+      "resolution_code": "3rd Party/ Vendor Support"
+    }
+  },
+  {
+    "ticket_id": "INC0758396",
+    "text": "Ticket INC0758396 \u2014 Security, 2 - High, RP - Royal Princess\nRP - Security review opened after unusual access pattern to guest location data\nThe security team was alerted to an unusual pattern of access to guest positioning data on RP, originating from an internal account outside its normal usage pattern, and opened a review to rule out unauthorized access.\nResolution: The security review on RP concluded the unusual access pattern was legitimate scheduled reporting activity rather than unauthorized access. Monitoring rules have been updated to recognise this pattern going forward.",
+    "metadata": {
+      "location": "RP - Royal Princess",
+      "priority": "2 - High",
+      "impact": "2 - Significant / Large",
+      "category": "Security",
+      "resolution_code": "Resolved - Fixed Without Action",
+      "incident_state": "Closed",
+      "assignment_group": "PQR - Location Services",
+      "configuration_item": "Location Services Experience"
+    }
+  },
+  {
+    "ticket_id": "INC0578292",
+    "text": "Ticket INC0578292 \u2014 Hardware, 2 - High, RU - Ruby Princess\nRU - Black-screen issue after BBC World channel now affecting additional stateroom decks\nThe black-screen-after-BBC-World issue previously seen on RU has now also been reported on decks not previously affected. Hardware diagnostics confirmed the same TV unit batch had been installed on the newly affected decks during a recent refresh.\nResolution: The issue was resolved by applying the existing firmware workaround fleet-wide across the newly affected decks on RU. Black-screen reports stopped across all affected units. The vendor has been notified of the wider batch impact.",
+    "metadata": {
+      "incident_state": "Closed",
+      "configuration_item": "Stateroom Experience",
+      "resolution_code": "Resolved - Workaround Applied",
+      "priority": "2 - High",
+      "category": "Hardware",
+      "location": "RU - Ruby Princess",
+      "assignment_group": "PQR - Media Services",
+      "impact": "2 - Significant / Large"
+    }
+  },
+  {
+    "ticket_id": "INC0218480",
+    "text": "Ticket INC0218480 \u2014 Infrastructure, 2 - High, SA - Sapphire Princess\nSA - Positioning platform process on media02.sa.ocean.com restarting in a loop\nThe positioning platform's core process on media02.sa.ocean.com began restarting repeatedly on SA, and the deck-plan reader feed went stale during each cycle.\nResolution: The issue was resolved by clearing the corrupted checkpoint file and restarting the positioning process on media02.sa.ocean.com. The deck-plan reader feed on SA resumed updating immediately and no further restarts were observed.",
+    "metadata": {
+      "resolution_code": "Restart / Re-Deploy",
+      "configuration_item": "Location Services Experience",
+      "location": "SA - Sapphire Princess",
+      "category": "Infrastructure",
+      "impact": "2 - Significant / Large",
+      "incident_state": "Closed",
+      "assignment_group": "PQR - Location Services",
+      "priority": "2 - High"
+    }
+  },
+  {
+    "ticket_id": "INC0097789",
+    "text": "Ticket INC0097789 \u2014 User Access & Authentication, 2 - High, SU - Sun Princess\nSU - Guest locked out of ABC app after repeated failed login attempts\nA guest on SU reported being locked out of the ABC app after several failed login attempts following a password change, and was unable to self-service unlock the account.\nResolution: The issue was resolved by manually unlocking the guest's account and resetting the password on SU. The guest was able to log in successfully afterward. Guests are being reminded to use the in-app password recovery flow to avoid lockouts.",
+    "metadata": {
+      "configuration_item": "ABC (Ocean - ABC)",
+      "location": "SU - Sun Princess",
+      "assignment_group": "PQR - ABC",
+      "resolution_code": "Resolved by caller",
+      "impact": "2 - Significant / Large",
+      "priority": "2 - High",
+      "category": "User Access & Authentication",
+      "incident_state": "Closed"
+    }
+  },
+  {
+    "ticket_id": "INC0872060",
+    "text": "Ticket INC0872060 \u2014 Database, 2 - High, SU - Sun Princess\nSU - Dining reservation bookings failing to save on ABC app, database write contention\nGuests on SU reported that new dining reservations were not saving after confirmation in the ABC app. Database monitoring identified a long-running query against the dining-reservation table holding a lock during the affected period.\nResolution: The issue was resolved by rolling back the stuck transaction and redeploying the dining reservation service on SU. New reservations began saving normally immediately afterward. Additional transaction timeout safeguards have been added to prevent a recurrence.",
+    "metadata": {
+      "resolution_code": "Restart / Re-Deploy",
+      "location": "SU - Sun Princess",
+      "impact": "3 - Moderate / Limited",
+      "assignment_group": "PQR - ABC",
+      "incident_state": "Closed",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "category": "Database",
+      "priority": "2 - High"
+    }
+  },
+  {
+    "ticket_id": "INC0406335",
+    "text": "Ticket INC0406335 \u2014 Security, 2 - High, CB - Caribbean Princess\nCB - CrewCall Chat group messages not reaching all members, certificate trust issue\nCrew on CB in larger group channels reported messages only reaching some members. The security team traced the failure to a certificate trust issue between the message fan-out service and a subset of notification endpoints.\nResolution: The issue was resolved by updating the trust store with the correct intermediate certificate on CB. Group message delivery to all members was confirmed working afterward. Certificate rotation procedures have been updated to include a trust-store review step.",
+    "metadata": {
+      "impact": "2 - Significant / Large",
+      "resolution_code": "Resolved - Permanent Fix Applied",
+      "configuration_item": "CrewCall Chat",
+      "incident_state": "Closed",
+      "priority": "2 - High",
+      "category": "Security",
+      "assignment_group": "PQR - Portals",
+      "location": "CB - Caribbean Princess"
+    }
+  },
+  {
+    "ticket_id": "INC0549553",
+    "text": "Ticket INC0549553 \u2014 User Access & Authentication, 2 - High, RP - Royal Princess\nRP - Guest unable to log in to save favorite locations in wayfinding app\nA guest on RP reported being unable to log in to the wayfinding app's companion mobile experience to save favourite locations, receiving an authentication error despite valid credentials.\nResolution: The issue was resolved by manually re-linking the guest's wayfinding companion profile to their main account on RP. Login succeeded immediately afterward with saved locations intact.",
+    "metadata": {
+      "configuration_item": "Wayfinding Experience",
+      "incident_state": "Closed",
+      "resolution_code": "Resolved - Fixed Without Action",
+      "impact": "3 - Moderate / Limited",
+      "location": "RP - Royal Princess",
+      "assignment_group": "PQR - Portals",
+      "priority": "2 - High",
+      "category": "User Access & Authentication"
+    }
+  },
+  {
+    "ticket_id": "INC0200408",
+    "text": "Ticket INC0200408 \u2014 User Access & Authentication, 2 - High, SU - Sun Princess\nSU - Guest session expiring mid-order in OceanNow app\nA guest on SU reported being logged out of the OceanNow app partway through placing an order, losing their cart contents and having to start over.\nResolution: The issue was resolved by correcting the session-timeout configuration for the OceanNow ordering flow on SU. Sessions remained active through the full ordering process afterward.",
+    "metadata": {
+      "priority": "2 - High",
+      "impact": "2 - Significant / Large",
+      "incident_state": "Closed",
+      "category": "User Access & Authentication",
+      "location": "SU - Sun Princess",
+      "configuration_item": "OceanNow",
+      "assignment_group": "PQR - ABC",
+      "resolution_code": "Resolved by caller"
+    }
+  },
+  {
+    "ticket_id": "INC0757764",
+    "text": "Ticket INC0757764 \u2014 Security, 2 - High, SA - Sapphire Princess\nSA - Rogue BLE device detected on location services network\nThe location services network on SA detected an unrecognised BLE device attempting to communicate with the beacon gateway, prompting a security review to rule out signal spoofing or interference.\nResolution: The security review on SA determined the unrecognised BLE signal came from a guest's personal accessory rather than a malicious device. No action against the location services network was required, and the incident was closed.",
+    "metadata": {
+      "impact": "2 - Significant / Large",
+      "priority": "2 - High",
+      "location": "SA - Sapphire Princess",
+      "resolution_code": "Resolved - Fixed Without Action",
+      "incident_state": "Closed",
+      "configuration_item": "Location Services Experience",
+      "category": "Security",
+      "assignment_group": "PQR - Location Services"
+    }
+  },
+  {
+    "ticket_id": "INC0079341",
+    "text": "Ticket INC0079341 \u2014 Infrastructure, 2 - High, SA - Sapphire Princess\nSA - app01.sa.ocean.com disk space alert, runaway application logs after failed log rotation\nAvailable disk space on app01.sa.ocean.com dropped below the 10% threshold on SA. Infrastructure monitoring traced the cause to a failed log-rotation job, with application logs accumulating uncompressed for several days.\nResolution: The issue was resolved by manually clearing the log backlog and fixing the log-rotation job's schedule on app01.sa.ocean.com. Free space returned to above 40% afterward, and the rotation job has been confirmed running correctly on its normal schedule.",
+    "metadata": {
+      "configuration_item": "app01.sa.ocean.com",
+      "priority": "2 - High",
+      "resolution_code": "Resolved - Permanent Fix Applied",
+      "assignment_group": "PQR - Platform Ops",
+      "impact": "2 - Significant / Large",
+      "incident_state": "Closed",
+      "category": "Infrastructure",
+      "location": "SA - Sapphire Princess"
+    }
+  },
+  {
+    "ticket_id": "INC0216715",
+    "text": "Ticket INC0216715 \u2014 Application, 2 - High, SU - Sun Princess\nSU - Stateroom TV audio out of sync with video during movie-on-demand playback\nGuests on SU watching movies through the on-demand service reported the audio noticeably lagging behind the video, worsening the longer playback continued. Application logs showed a buffering defect in the media client's audio-decoding pipeline.\nResolution: The issue was resolved by switching the affected set-top boxes to a different audio output mode on SU. Audio-video sync was maintained for the remainder of playback. A permanent fix for the decoding pipeline defect has been queued.",
+    "metadata": {
+      "resolution_code": "Resolved - Workaround Applied",
+      "impact": "2 - Significant / Large",
+      "incident_state": "Closed",
+      "configuration_item": "Stateroom Experience",
+      "priority": "2 - High",
+      "category": "Application",
+      "assignment_group": "PQR - Media Services",
+      "location": "SU - Sun Princess"
+    }
+  },
+  {
+    "ticket_id": "INC0402059",
+    "text": "Ticket INC0402059 \u2014 User Access & Authentication, 2 - High, RU - Ruby Princess\nRU - Digital key in ABC app unreliable at stateroom door, guest reports repeated re-authentication\nA guest on RU reported needing to tap their phone against the stateroom door reader multiple times before the ABC app's digital key successfully authenticates.\nResolution: The issue was resolved by updating the guest's ABC app to the latest version on RU, which includes an improved Bluetooth authentication handshake. Unlocking became reliable immediately. Guests on older app versions are being prompted to update.",
+    "metadata": {
+      "resolution_code": "Resolved by caller",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "impact": "2 - Significant / Large",
+      "assignment_group": "PQR - ABC",
+      "priority": "2 - High",
+      "location": "RU - Ruby Princess",
+      "category": "User Access & Authentication",
+      "incident_state": "Closed"
+    }
+  },
+  {
+    "ticket_id": "INC0352019",
+    "text": "Ticket INC0352019 \u2014 Security, 3 - Moderate, CB - Caribbean Princess\nCB - CrewCall Chat push notifications delayed, certificate chain validation failures\nCrew on CB reported CrewCall Chat push notifications arriving 10 minutes or more after a message was sent. The security team found intermittent certificate chain validation failures causing delivery retries to queue up.\nResolution: The issue was resolved by updating the root certificate store on the notification dispatch service on CB. Push notification latency returned to a few seconds immediately afterward. The certificate store update process has been added to routine maintenance.",
+    "metadata": {
+      "incident_state": "Closed",
+      "assignment_group": "PQR - Portals",
+      "location": "CB - Caribbean Princess",
+      "priority": "3 - Moderate",
+      "configuration_item": "CrewCall Chat",
+      "category": "Security",
+      "impact": "3 - Moderate / Limited",
+      "resolution_code": "Resolved - Permanent Fix Applied"
+    }
+  },
+  {
+    "ticket_id": "INC0615956",
+    "text": "Ticket INC0615956 \u2014 Application, 3 - Moderate, ST - Star Princess\nST - Wayfinding kiosk screen frozen on splash screen\nA wayfinding kiosk near the pool deck on ST was frozen on its splash/loading screen and never progressed to the interactive map, regardless of taps. Application logs showed the kiosk application had hung during startup.\nResolution: The issue was resolved by restarting the kiosk application on ST, clearing the hung startup sequence. The interactive map loaded normally immediately afterward.",
+    "metadata": {
+      "priority": "3 - Moderate",
+      "incident_state": "Closed",
+      "configuration_item": "Wayfinding Experience",
+      "resolution_code": "Resolved - Fixed Without Action",
+      "location": "ST - Star Princess",
+      "category": "Application",
+      "assignment_group": "PQR - Portals",
+      "impact": "3 - Moderate / Limited"
+    }
+  },
+  {
+    "ticket_id": "INC0681259",
+    "text": "Ticket INC0681259 \u2014 Application, 3 - Moderate, RP - Royal Princess\nRP - OceanNow order shows 'Delivered' status but guest never received it\nA guest on RP reported their OceanNow order was marked 'Delivered' in the app, but the order never arrived at their stateroom. Application logs showed the delivery-confirmation step had been triggered against an incorrect stateroom number.\nResolution: The issue was resolved after crew located the misdelivered order on RP and arranged for the correct delivery to the guest. The delivery-confirmation step is being reviewed to prevent confirmation against the wrong stateroom number.",
+    "metadata": {
+      "resolution_code": "Resolved by caller",
+      "incident_state": "Closed",
+      "configuration_item": "OceanNow",
+      "assignment_group": "PQR - ABC",
+      "location": "RP - Royal Princess",
+      "impact": "3 - Moderate / Limited",
+      "category": "Application",
+      "priority": "3 - Moderate"
+    }
+  },
+  {
+    "ticket_id": "INC0667840",
+    "text": "Ticket INC0667840 \u2014 Application, 3 - Moderate, RP - Royal Princess\nRP - GuestView map showing guest positions several minutes out of date\nGuests on RP reported the GuestView map showing their location several minutes behind their actual position on the ship. Application logs showed the map-rendering service was not refreshing at the expected interval.\nResolution: The issue was resolved by deploying a fix to the map-rendering service's cache refresh logic on RP. GuestView positions updated in near real time immediately afterward.",
+    "metadata": {
+      "assignment_group": "PQR - Location Services",
+      "configuration_item": "Location Services Experience",
+      "category": "Application",
+      "incident_state": "Closed",
+      "impact": "3 - Moderate / Limited",
+      "location": "RP - Royal Princess",
+      "resolution_code": "Resolved - Fixed Without Action",
+      "priority": "3 - Moderate"
+    }
+  },
+  {
+    "ticket_id": "INC0718256",
+    "text": "Ticket INC0718256 \u2014 Application, 3 - Moderate, YP - Sky Princess\nYP - Interactive TV portal freezes when guest opens the dining reservations tab\nGuests on YP reported the interactive TV portal freezing completely when they navigated to the dining reservations tab, requiring a TV restart to recover. Application logs showed an unhandled error when loading the reservations data.\nResolution: The issue was resolved by remotely restarting the affected stateroom media clients on YP. The interactive portal responded normally to the dining reservations tab afterward. A permanent fix for the malformed response handling has been queued.",
+    "metadata": {
+      "impact": "3 - Moderate / Limited",
+      "configuration_item": "Stateroom Experience",
+      "priority": "3 - Moderate",
+      "incident_state": "Closed",
+      "location": "YP - Sky Princess",
+      "category": "Application",
+      "resolution_code": "Resolved - Workaround Applied",
+      "assignment_group": "PQR - Media Services"
+    }
+  },
+  {
+    "ticket_id": "INC0237345",
+    "text": "Ticket INC0237345 \u2014 User Access & Authentication, 3 - Moderate, YP - Sky Princess\nYP - Guest unable to log in to ABC app after loyalty tier upgrade mid-voyage\nA guest on YP whose loyalty tier was upgraded mid-voyage reported being unable to log in to the ABC app afterward, receiving an account-verification error.\nResolution: The issue was resolved by forcing a profile resync between the loyalty platform and the authentication service on YP. The guest logged in successfully immediately after. A permanent fix to keep the two systems in sync automatically has been logged for the development team.",
+    "metadata": {
+      "resolution_code": "Resolved by caller",
+      "impact": "3 - Moderate / Limited",
+      "priority": "3 - Moderate",
+      "location": "YP - Sky Princess",
+      "assignment_group": "PQR - ABC",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "incident_state": "Closed",
+      "category": "User Access & Authentication"
+    }
+  },
+  {
+    "ticket_id": "INC0817011",
+    "text": "Ticket INC0817011 \u2014 User Access & Authentication, 3 - Moderate, RU - Ruby Princess\nRU - Crew unable to log in to CrewCall Chat after latest app update\nFollowing the latest CrewCall Chat app update, several crew on RU reported login failing with an 'invalid session' error on first launch after updating.\nResolution: The issue was resolved by deploying a server-side fix to accept both session formats during the transition on RU. Crew confirmed login succeeded on first launch immediately afterward.",
+    "metadata": {
+      "incident_state": "Closed",
+      "location": "RU - Ruby Princess",
+      "assignment_group": "PQR - Portals",
+      "impact": "3 - Moderate / Limited",
+      "category": "User Access & Authentication",
+      "resolution_code": "Resolved - Permanent Fix Applied",
+      "priority": "3 - Moderate",
+      "configuration_item": "CrewCall Chat"
+    }
+  },
+  {
+    "ticket_id": "INC0774831",
+    "text": "Ticket INC0774831 \u2014 User Access & Authentication, 4 - Low, AP - Grand Princess\nAP - Guest unable to authenticate to wayfinding app after itinerary change\nA guest on AP reported being unable to log in to the wayfinding app following an itinerary change, receiving an account-verification error despite entering correct credentials.\nResolution: The issue was resolved by forcing a profile resync between the booking platform and the wayfinding app on AP. The guest logged in successfully immediately afterward.",
+    "metadata": {
+      "assignment_group": "PQR - Portals",
+      "incident_state": "Closed",
+      "resolution_code": "Resolved - Fixed Without Action",
+      "category": "User Access & Authentication",
+      "priority": "4 - Low",
+      "location": "AP - Grand Princess",
+      "configuration_item": "Wayfinding Experience",
+      "impact": "4 - Minor / Localized"
+    }
+  },
+  {
+    "ticket_id": "INC0796426",
+    "text": "Ticket INC0796426 \u2014 Database, 4 - Low, AP - Grand Princess\nAP - OceanNow order charged twice to stateroom account, duplicate transaction record\nA guest on AP reported being charged twice for the same OceanNow order on their stateroom folio. Database investigation found a duplicate transaction record had been written due to a retry after a brief timeout.\nResolution: The issue was resolved by reversing the duplicate charge on the guest's folio on AP and deploying a fix to make order submission idempotent so retries cannot create duplicate records going forward.",
+    "metadata": {
+      "incident_state": "Closed",
+      "resolution_code": "Resolved by caller",
+      "priority": "4 - Low",
+      "impact": "4 - Minor / Localized",
+      "location": "AP - Grand Princess",
+      "configuration_item": "OceanNow",
+      "assignment_group": "PQR - ABC",
+      "category": "Database"
+    }
+  },
+  {
+    "ticket_id": "INC0786206",
+    "text": "Ticket INC0786206 \u2014 Application, 4 - Low, YP - Sky Princess\nYP - GuestView deck map not loading for guests in a specific cabin zone\nGuests in a specific forward cabin zone on YP reported the GuestView deck map failing to load their position, while other zones displayed normally. Application logs pointed to a rendering error specific to that zone's map tile.\nResolution: The issue was resolved by redeploying a corrected map tile asset for the affected cabin zone on YP. The GuestView map displayed correctly for that zone immediately afterward.",
+    "metadata": {
+      "priority": "4 - Low",
+      "category": "Application",
+      "configuration_item": "Location Services Experience",
+      "impact": "4 - Minor / Localized",
+      "incident_state": "Closed",
+      "location": "YP - Sky Princess",
+      "assignment_group": "PQR - Location Services",
+      "resolution_code": "Resolved - Fixed Without Action"
+    }
+  },
+  {
+    "ticket_id": "INC0789155",
+    "text": "Ticket INC0789155 \u2014 Application, 4 - Low, ST - Star Princess\nST - Stateroom TV picture pixelates during peak evening viewing hours\nMultiple guests on ST reported picture pixelation and brief freezes on their stateroom TVs during the peak 7-9pm viewing window, clearing up later at night. Application logs showed the streaming service exceeding its allocated bitrate budget during peak concurrency.\nResolution: The issue was resolved by temporarily capping the streaming bitrate during peak hours on ST. Picture quality reports improved significantly during the following peak window. Longer-term streaming capacity is being evaluated to remove the cap.",
+    "metadata": {
+      "category": "Application",
+      "assignment_group": "PQR - Media Services",
+      "configuration_item": "Stateroom Experience",
+      "impact": "4 - Minor / Localized",
+      "location": "ST - Star Princess",
+      "resolution_code": "Resolved - Workaround Applied",
+      "priority": "4 - Low",
+      "incident_state": "Closed"
+    }
+  },
+  {
+    "ticket_id": "INC0732325",
+    "text": "Ticket INC0732325 \u2014 User Access & Authentication, 4 - Low, SU - Sun Princess\nSU - Guest unable to log in to ABC app after referral account linking\nA guest on SU who linked their account with a referred fellow passenger reported being unable to log in afterward, with the app repeatedly prompting for re-authentication.\nResolution: The issue was resolved by manually re-issuing a valid session for the guest's account on SU. Login stability was confirmed afterward. The referral linking process is being corrected so it no longer invalidates an active session.",
+    "metadata": {
+      "assignment_group": "PQR - ABC",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "priority": "4 - Low",
+      "location": "SU - Sun Princess",
+      "incident_state": "Closed",
+      "impact": "4 - Minor / Localized",
+      "category": "User Access & Authentication",
+      "resolution_code": "Resolved by caller"
+    }
+  },
+  {
+    "ticket_id": "INC0799821",
+    "text": "Ticket INC0799821 \u2014 Application, 4 - Low, RP - Royal Princess\nRP - CrewCall Chat crashes when opening large group channels\nCrew on RP reported CrewCall Chat crashing whenever they opened a group channel with more than roughly 50 members. Application logs identified a pagination bug when loading the member list for large channels.\nResolution: The issue was resolved by deploying a fix for the member-list pagination bug on RP. Crew confirmed large group channels now open without crashing.",
+    "metadata": {
+      "priority": "4 - Low",
+      "configuration_item": "CrewCall Chat",
+      "category": "Application",
+      "resolution_code": "Resolved - Permanent Fix Applied",
+      "assignment_group": "PQR - Portals",
+      "impact": "4 - Minor / Localized",
+      "incident_state": "Closed",
+      "location": "RP - Royal Princess"
+    }
+  },
+  {
+    "ticket_id": "INC0759320",
+    "text": "Ticket INC0759320 \u2014 User Access & Authentication, 4 - Low, SU - Sun Princess\nSU - Guest session expiring while using 'find my group' feature in wayfinding app\nA guest on SU reported being logged out of the wayfinding app's 'find my group' feature partway through a session, losing the shared group view and having to log back in repeatedly.\nResolution: The issue was resolved by correcting the session-timeout configuration for the 'find my group' flow on SU. The guest's session remained active through extended use afterward.",
+    "metadata": {
+      "location": "SU - Sun Princess",
+      "category": "User Access & Authentication",
+      "assignment_group": "PQR - Portals",
+      "priority": "4 - Low",
+      "incident_state": "Closed",
+      "configuration_item": "Wayfinding Experience",
+      "resolution_code": "Resolved - Fixed Without Action",
+      "impact": "4 - Minor / Localized"
+    }
+  },
+  {
+    "ticket_id": "INC0781542",
+    "text": "Ticket INC0781542 \u2014 Other / Service Request, 4 - Low, AP - Grand Princess\nAP - Guest requesting compensation for missing item in delivered OceanNow order\nA guest on AP submitted a service request after their delivered OceanNow order was missing an item that was listed and charged for at checkout.\nResolution: The missing item from the guest's OceanNow order on AP was delivered separately after review of the kitchen ticket. A packing-checklist gap has been raised with galley operations to prevent recurrence.",
+    "metadata": {
+      "priority": "4 - Low",
+      "assignment_group": "PQR - ABC",
+      "configuration_item": "OceanNow",
+      "category": "Other / Service Request",
+      "resolution_code": "Resolved by caller",
+      "incident_state": "Closed",
+      "location": "AP - Grand Princess",
+      "impact": "4 - Minor / Localized"
+    }
+  },
+  {
+    "ticket_id": "INC0205255",
+    "text": "Ticket INC0205255 \u2014 Application, 4 - Low, SU - Sun Princess\nSU - Digital key module in ABC app repeatedly restarting after recent deployment\nThe digital key module of the ABC app on SU began restarting repeatedly, intermittently preventing guests from unlocking their stateroom doors. Application logs showed an unhandled exception introduced in the latest release.\nResolution: The issue was resolved by rolling back the digital key module to the previous release on SU. The restart loop stopped immediately and digital key access resumed normally. A fix for the mid-voyage reassignment case has been queued for the next deployment.",
+    "metadata": {
+      "assignment_group": "PQR - ABC",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "category": "Application",
+      "priority": "4 - Low",
+      "location": "SU - Sun Princess",
+      "incident_state": "Closed",
+      "impact": "3 - Moderate / Limited",
+      "resolution_code": "Restart / Re-Deploy"
+    }
+  },
+  {
+    "ticket_id": "INC0859682",
+    "text": "Ticket INC0859682 \u2014 Application, 4 - Low, ST - Star Princess\nST - Shore excursion meeting-point feature showing outdated assembly location\nGuests on ST reported the shore-excursion meeting-point feature in the location app showing an outdated assembly location that did not match the announced meeting point. Application logs showed the feature was reading from a stale cache.\nResolution: The issue was resolved by deploying a fix so the meeting-point feature invalidates its cache immediately on updates on ST. Guests saw the correct assembly location afterward.",
+    "metadata": {
+      "incident_state": "Closed",
+      "resolution_code": "Resolved - Fixed Without Action",
+      "impact": "4 - Minor / Localized",
+      "location": "ST - Star Princess",
+      "assignment_group": "PQR - Location Services",
+      "category": "Application",
+      "configuration_item": "Location Services Experience",
+      "priority": "4 - Low"
+    }
+  },
+  {
+    "ticket_id": "INC0692857",
+    "text": "Ticket INC0692857 \u2014 Application, 4 - Low, YP - Sky Princess\nYP - Stateroom TV remote loses pairing intermittently, guest unable to change channels\nGuests on YP reported their stateroom TV remote periodically stopping response to channel-change commands, though power and volume buttons kept working. Application logs showed the remote's pairing session expiring unexpectedly.\nResolution: The issue was resolved by re-pairing the affected remotes via the reset sequence on YP. Channel control was restored immediately. A fix for the premature pairing-session expiry has been queued.",
+    "metadata": {
+      "incident_state": "Closed",
+      "impact": "4 - Minor / Localized",
+      "category": "Application",
+      "priority": "4 - Low",
+      "location": "YP - Sky Princess",
+      "configuration_item": "Stateroom Experience",
+      "resolution_code": "Resolved - Workaround Applied",
+      "assignment_group": "PQR - Media Services"
+    }
+  },
+  {
+    "ticket_id": "INC0833924",
+    "text": "Ticket INC0833924 \u2014 User Access & Authentication, 3 - Moderate, SA - Sapphire Princess\nSA - Guest unable to remain logged in to ABC app, session expiring prematurely\nA guest on SA reported being logged out of the ABC app every few minutes, well before the expected session duration, and having to re-enter credentials repeatedly.\nResolution: The issue was resolved after correcting the session-token refresh configuration for the affected device platform on SA. The guest's session remained active as expected afterward. Monitoring has been added to catch premature session expiry going forward.",
+    "metadata": {
+      "resolution_code": "Resolved by caller",
+      "impact": "3 - Moderate / Limited",
+      "category": "User Access & Authentication",
+      "location": "SA - Sapphire Princess",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "assignment_group": "PQR - ABC",
+      "priority": "3 - Moderate",
+      "incident_state": "Closed"
+    }
+  },
+  {
+    "ticket_id": "INC0072891",
+    "text": "Ticket INC0072891 \u2014 Infrastructure, 3 - Moderate, ST - Star Princess\nST - Location services responding slowly, readers intermittently offline\nLocation services on ST were responding slowly, and readers and sensors were intermittently reporting offline, with guest positioning lagging noticeably behind actual movement.\nResolution: The issue was resolved by restarting the positioning platform's coordination and processing services on ST. Reader latency returned to normal immediately afterward, with no further offline reports.",
+    "metadata": {
+      "configuration_item": "Location Services Experience",
+      "incident_state": "Closed",
+      "impact": "3 - Moderate / Limited",
+      "location": "ST - Star Princess",
+      "resolution_code": "Restart / Re-Deploy",
+      "priority": "3 - Moderate",
+      "category": "Infrastructure",
+      "assignment_group": "PQR - Location Services"
+    }
+  },
+  {
+    "ticket_id": "INC0769707",
+    "text": "Ticket INC0769707 \u2014 Application, 3 - Moderate, GP - Regal Princess\nGP - CrewCall Chat notifications not received while off-duty\nCrew on GP reported they stopped receiving CrewCall Chat notifications entirely once their shift ended, even while remaining logged in. Application logs showed background refresh being suspended incorrectly based on duty status.\nResolution: The issue was resolved by decoupling background notification refresh from duty status on GP. Crew confirmed notifications now arrive normally while off-duty.",
+    "metadata": {
+      "category": "Application",
+      "assignment_group": "PQR - Portals",
+      "impact": "3 - Moderate / Limited",
+      "resolution_code": "Resolved - Permanent Fix Applied",
+      "configuration_item": "CrewCall Chat",
+      "location": "GP - Regal Princess",
+      "priority": "3 - Moderate",
+      "incident_state": "Closed"
+    }
+  },
+  {
+    "ticket_id": "INC0692680",
+    "text": "Ticket INC0692680 \u2014 Application, 3 - Moderate, SA - Sapphire Princess\nSA - Wayfinding kiosk touchscreen registering taps as double-taps\nGuests on SA reported a wayfinding kiosk's touchscreen registering every single tap as a double-tap, causing the map to zoom unexpectedly. Application logs showed a touch-debounce setting misconfigured on the affected unit.\nResolution: The issue was resolved by correcting the touch-debounce configuration and restarting the kiosk application on SA. Single taps registered correctly, and the unexpected zoom behaviour stopped immediately.",
+    "metadata": {
+      "assignment_group": "PQR - Portals",
+      "category": "Application",
+      "priority": "3 - Moderate",
+      "incident_state": "Closed",
+      "configuration_item": "Wayfinding Experience",
+      "impact": "3 - Moderate / Limited",
+      "location": "SA - Sapphire Princess",
+      "resolution_code": "Resolved - Fixed Without Action"
+    }
+  },
+  {
+    "ticket_id": "INC0420162",
+    "text": "Ticket INC0420162 \u2014 Infrastructure, 3 - Moderate, RU - Ruby Princess\nRU - media01.ru.ocean.com intermittently unreachable, satellite link flapping\nmedia01.ru.ocean.com was intermittently unreachable from shore-side monitoring on RU. Infrastructure investigation found the ship's satellite uplink flapping, causing brief connectivity gaps rather than a fault on the host itself.\nResolution: No server-side action was needed for media01.ru.ocean.com; the satellite uplink stabilised once the handoff completed, and connectivity has been reachable continuously since.",
+    "metadata": {
+      "configuration_item": "media01.ru.ocean.com",
+      "priority": "3 - Moderate",
+      "impact": "3 - Moderate / Limited",
+      "category": "Infrastructure",
+      "resolution_code": "",
+      "assignment_group": "PQR - Platform Ops",
+      "location": "RU - Ruby Princess",
+      "incident_state": "Canceled"
+    }
+  },
+  {
+    "ticket_id": "INC0877972",
+    "text": "Ticket INC0877972 \u2014 Application, 3 - Moderate, SU - Sun Princess\nSU - OceanNow app menu prices not matching posted venue pricing\nA guest on SU reported the prices shown in the OceanNow app for a specialty venue did not match the prices posted at the venue itself. Application logs showed the app's pricing data had not picked up a recent price update.\nResolution: The issue was resolved by manually triggering a price sync for the affected venue on SU. The app displayed correct, matching pricing immediately afterward.",
+    "metadata": {
+      "location": "SU - Sun Princess",
+      "impact": "3 - Moderate / Limited",
+      "configuration_item": "OceanNow",
+      "category": "Application",
+      "assignment_group": "PQR - ABC",
+      "incident_state": "Canceled",
+      "resolution_code": "",
+      "priority": "3 - Moderate"
+    }
+  },
+  {
+    "ticket_id": "INC0274256",
+    "text": "Ticket INC0274256 \u2014 Application, 3 - Moderate, SU - Sun Princess\nSU - Muster drill check-in not registering for some guests in the location app\nA subset of guests on SU reported their muster-drill check-in was not registering in the location app, even though the reader displayed a successful scan. Application logs showed a processing error for check-ins submitted during a brief backend deployment window.\nResolution: The issue was resolved by manually reprocessing the check-in requests dropped during the deployment window on SU. All affected guests were correctly marked as checked in afterward. Deployments will now be scheduled outside of drill windows going forward.",
+    "metadata": {
+      "impact": "3 - Moderate / Limited",
+      "location": "SU - Sun Princess",
+      "resolution_code": "",
+      "priority": "3 - Moderate",
+      "category": "Application",
+      "assignment_group": "PQR - Location Services",
+      "incident_state": "Canceled",
+      "configuration_item": "Location Services Experience"
+    }
+  },
+  {
+    "ticket_id": "INC0643012",
+    "text": "Ticket INC0643012 \u2014 Application, 2 - High, SA - Sapphire Princess\nSA - Stateroom TV interactive portal shows incorrect folio balance\nA guest on SA reported the folio balance shown on their stateroom TV's interactive portal did not match the balance shown in the ABC app. Application logs showed the portal was reading from a stale cache.\nResolution: The issue was resolved by forcing a manual folio resync for the affected stateroom on SA. Both screens displayed matching balances immediately afterward. A permanent fix for the portal's cache refresh logic has been logged.",
+    "metadata": {
+      "impact": "2 - Significant / Large",
+      "resolution_code": "",
+      "priority": "2 - High",
+      "category": "Application",
+      "incident_state": "Canceled",
+      "assignment_group": "PQR - Media Services",
+      "location": "SA - Sapphire Princess",
+      "configuration_item": "Stateroom Experience"
+    }
+  },
+  {
+    "ticket_id": "INC0479747",
+    "text": "Ticket INC0479747 \u2014 User Access & Authentication, 2 - High, MJ - Majestic Princess\nMJ - Digital key in ABC app intermittently failing to authenticate at stateroom door\nA guest on MJ reported that the digital key feature in the ABC app intermittently fails to authenticate against their stateroom door reader, requiring repeated attempts before it unlocks.\nResolution: The issue was resolved by re-pairing the guest's digital key credential within the ABC app on MJ. Authentication at the stateroom door succeeded reliably afterward. Guests are being advised to re-pair their digital key after any app update as a precaution.",
+    "metadata": {
+      "configuration_item": "ABC (Ocean - ABC)",
+      "category": "User Access & Authentication",
+      "assignment_group": "PQR - ABC",
+      "impact": "2 - Significant / Large",
+      "priority": "2 - High",
+      "incident_state": "Canceled",
+      "location": "MJ - Majestic Princess",
+      "resolution_code": ""
+    }
+  },
+  {
+    "ticket_id": "INC0798465",
+    "text": "Ticket INC0798465 \u2014 User Access & Authentication, 3 - Moderate, RU - Ruby Princess\nRU - Crew directory sync failure preventing login for newly added crew after changeover\nFollowing a crew changeover in port on RU, newly joined crew were unable to log in to CrewCall Chat, receiving an account-not-found error despite being active in the crew management system.\nResolution: The issue was resolved by manually triggering the crew directory sync job on RU. Newly added crew were able to log in successfully immediately afterward. The sync job's schedule has been adjusted to run automatically right after a changeover event.",
+    "metadata": {
+      "incident_state": "On Hold",
+      "impact": "3 - Moderate / Limited",
+      "location": "RU - Ruby Princess",
+      "category": "User Access & Authentication",
+      "configuration_item": "CrewCall Chat",
+      "priority": "3 - Moderate",
+      "resolution_code": "",
+      "assignment_group": "PQR - Portals"
+    }
+  },
+  {
+    "ticket_id": "INC0763576",
+    "text": "Ticket INC0763576 \u2014 Database, 3 - Moderate, RP - Royal Princess\nRP - Wayfinding kiosk showing outdated venue hours after schedule change\nGuests on RP reported a wayfinding kiosk displaying venue opening hours that no longer matched the day's updated schedule. Database investigation found the venue-hours table had not received the day's schedule update.\nResolution: The issue was resolved by manually applying the correct venue-hours update to the database on RP. The kiosk displayed accurate hours immediately afterward. Error handling for the update job has been improved so failures no longer occur silently.",
+    "metadata": {
+      "resolution_code": "",
+      "location": "RP - Royal Princess",
+      "assignment_group": "PQR - Portals",
+      "configuration_item": "Wayfinding Experience",
+      "category": "Database",
+      "priority": "3 - Moderate",
+      "impact": "3 - Moderate / Limited",
+      "incident_state": "In Progress"
+    }
+  },
+  {
+    "ticket_id": "INC0875063",
+    "text": "Ticket INC0875063 \u2014 Application, 3 - Moderate, GP - Regal Princess\nGP - OceanNow app showing wrong ship's menu after itinerary change\nA guest on GP reported the OceanNow app displaying menu items and pricing from a different ship in the fleet. Application logs traced the issue to a stale ship-context value cached on the guest's device after a recent itinerary change.\nResolution: The issue was resolved by guiding the guest through a sign-out and sign-in to force a fresh ship-context sync on GP. The correct menu loaded afterward. A fix to auto-refresh ship context on itinerary change has been queued.",
+    "metadata": {
+      "impact": "3 - Moderate / Limited",
+      "resolution_code": "",
+      "assignment_group": "PQR - ABC",
+      "category": "Application",
+      "priority": "3 - Moderate",
+      "location": "GP - Regal Princess",
+      "configuration_item": "OceanNow",
+      "incident_state": "In Progress"
+    }
+  },
+  {
+    "ticket_id": "INC0887294",
+    "text": "Ticket INC0887294 \u2014 Application, 3 - Moderate, YP - Sky Princess\nYP - Location app showing incorrect deck for guest's assigned lifeboat station\nSeveral guests on YP reported the location app displaying an incorrect deck number for their assigned lifeboat station. Application logs showed a data-mapping error introduced by a recent content update.\nResolution: The issue was resolved by correcting the lifeboat station deck mapping and redeploying the content on YP. The app displayed the correct deck for all affected guests immediately afterward.",
+    "metadata": {
+      "priority": "3 - Moderate",
+      "configuration_item": "Location Services Experience",
+      "incident_state": "In Progress",
+      "assignment_group": "PQR - Location Services",
+      "location": "YP - Sky Princess",
+      "impact": "3 - Moderate / Limited",
+      "resolution_code": "",
+      "category": "Application"
+    }
+  },
+  {
+    "ticket_id": "INC0880432",
+    "text": "Ticket INC0880432 \u2014 Security, 3 - Moderate, SA - Sapphire Princess\nSA - Security review opened after stateroom TV portal becomes unresponsive to remote input\nA guest on SA reported the interactive TV portal stopping response to any remote input after about 10 minutes of use. Given the pattern resembled a device-tampering report elsewhere on the ship, the security team reviewed the unit before it was handled as a routine fault.\nResolution: The security review on SA ruled out tampering, and the issue was resolved as a routine fault by remotely restarting the stateroom media client. Portal responsiveness was restored without needing an in-cabin visit.",
+    "metadata": {
+      "location": "SA - Sapphire Princess",
+      "category": "Security",
+      "resolution_code": "",
+      "assignment_group": "PQR - Media Services",
+      "incident_state": "New",
+      "priority": "3 - Moderate",
+      "configuration_item": "Stateroom Experience",
+      "impact": "3 - Moderate / Limited"
+    }
+  },
+  {
+    "ticket_id": "INC0889532",
+    "text": "Ticket INC0889532 \u2014 Database, 3 - Moderate, RP - Royal Princess\nRP - Excursion booking charges not posting to stateroom folio, delayed database sync\nGuests on RP who booked shore excursions through the ABC app reported the charge was not appearing on their stateroom folio. Investigation identified a delay in the sync job responsible for posting excursion charges to the billing database.\nResolution: The issue was resolved by manually clearing the sync backlog on RP, after which folio charges updated correctly for all affected guests. The sync job's batch size limit has been increased to avoid similar backlogs after high-volume port days.",
+    "metadata": {
+      "priority": "3 - Moderate",
+      "resolution_code": "",
+      "impact": "3 - Moderate / Limited",
+      "assignment_group": "PQR - ABC",
+      "location": "RP - Royal Princess",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "incident_state": "New",
+      "category": "Database"
+    }
+  },
+  {
+    "ticket_id": "INC0835736",
+    "text": "Ticket INC0835736 \u2014 Application, 3 - Moderate, YP - Sky Princess\nYP - CrewCall Chat shows duplicate contacts after roster sync\nCrew on YP reported seeing duplicate entries for the same colleague in their CrewCall Chat contact list following the nightly roster sync. Application logs showed the sync job creating a new contact entry instead of updating the existing one under certain conditions.\nResolution: The issue was resolved by deploying a fix to de-duplicate contacts by crew ID during roster sync on YP. Duplicate entries cleared after the next scheduled sync ran.",
+    "metadata": {
+      "resolution_code": "",
+      "priority": "3 - Moderate",
+      "category": "Application",
+      "impact": "3 - Moderate / Limited",
+      "location": "YP - Sky Princess",
+      "assignment_group": "PQR - Portals",
+      "configuration_item": "CrewCall Chat",
+      "incident_state": "In Progress"
+    }
+  },
+  {
+    "ticket_id": "INC0862562",
+    "text": "Ticket INC0862562 \u2014 User Access & Authentication, 3 - Moderate, MJ - Majestic Princess\nMJ - Guest unable to log in to accessibility-mode wayfinding companion app\nA guest on MJ using the wayfinding app's accessibility-mode companion reported being unable to log in, receiving a generic authentication error not seen in the standard app.\nResolution: The issue was resolved by updating the accessibility-mode login flow to use the current authentication service on MJ. The guest logged in successfully immediately afterward, and the fix has been applied fleet-wide.",
+    "metadata": {
+      "configuration_item": "Wayfinding Experience",
+      "assignment_group": "PQR - Portals",
+      "location": "MJ - Majestic Princess",
+      "resolution_code": "",
+      "priority": "3 - Moderate",
+      "incident_state": "On Hold",
+      "impact": "3 - Moderate / Limited",
+      "category": "User Access & Authentication"
+    }
+  },
+  {
+    "ticket_id": "INC0888295",
+    "text": "Ticket INC0888295 \u2014 Database, 4 - Low, RU - Ruby Princess\nRU - ABC catalog service exhausting database connections after API connection leak\nThe ABC catalog service on RU began rejecting guest requests to browse onboard retail items. Database monitoring showed the service had exhausted its available connection pool, with connections not being released after certain failed catalog lookups.\nResolution: The issue was resolved by restarting the catalog service to clear the leaked connections on RU. Catalog browsing returned to normal immediately. A permanent fix for the v2 API connection leak has been scheduled with the development team.",
+    "metadata": {
+      "configuration_item": "ABC (Ocean - ABC)",
+      "category": "Database",
+      "impact": "4 - Minor / Localized",
+      "priority": "4 - Low",
+      "location": "RU - Ruby Princess",
+      "assignment_group": "PQR - ABC",
+      "incident_state": "In Progress",
+      "resolution_code": ""
+    }
+  },
+  {
+    "ticket_id": "INC0880576",
+    "text": "Ticket INC0880576 \u2014 Application, 3 - Moderate, ST - Star Princess\nST - OceanNow app menu missing dietary and allergen filters\nA guest on ST with a food allergy reported the OceanNow app's dietary filter options were missing for several menu categories, making it difficult to find safe items. Application logs showed the affected categories were missing filter metadata after a recent menu update.\nResolution: The issue was resolved by backfilling the missing dietary filter metadata for the affected menu categories on ST. Filters reappeared correctly afterward. Content update procedures now include a metadata completeness check.",
+    "metadata": {
+      "impact": "3 - Moderate / Limited",
+      "priority": "3 - Moderate",
+      "incident_state": "Resolved",
+      "category": "Application",
+      "resolution_code": "Resolved by caller",
+      "location": "ST - Star Princess",
+      "configuration_item": "OceanNow",
+      "assignment_group": "PQR - ABC"
+    }
+  },
+  {
+    "ticket_id": "INC0884863",
+    "text": "Ticket INC0884863 \u2014 Other / Service Request, 3 - Moderate, MJ - Majestic Princess\nMJ - Guest requesting manual update of assigned muster station\nA guest on MJ submitted a service request asking for their assigned muster station to be manually updated after a late stateroom change was not reflected in the location app.\nResolution: The guest's muster station assignment on MJ was manually corrected to match their new stateroom, and the location app updated accordingly. The stateroom-change workflow is being reviewed so muster assignments update automatically going forward.",
+    "metadata": {
+      "assignment_group": "PQR - Location Services",
+      "impact": "3 - Moderate / Limited",
+      "category": "Other / Service Request",
+      "priority": "3 - Moderate",
+      "configuration_item": "Location Services Experience",
+      "location": "MJ - Majestic Princess",
+      "incident_state": "Resolved",
+      "resolution_code": "Resolved - Fixed Without Action"
+    }
+  },
+  {
+    "ticket_id": "INC0882869",
+    "text": "Ticket INC0882869 \u2014 Security, 3 - Moderate, AP - Grand Princess\nAP - Security review opened after stateroom TV input source found switched unexpectedly\nFollowing a scheduled onboard power test, several stateroom TVs on AP came back showing the wrong input source instead of the managed media client. The security team reviewed the affected rooms to rule out unauthorized device connection.\nResolution: The security review on AP found no evidence of unauthorized device connections; the input source change was caused by the power test itself. The AV team remotely restored the correct input source for all affected staterooms without needing to visit each cabin.",
+    "metadata": {
+      "location": "AP - Grand Princess",
+      "impact": "3 - Moderate / Limited",
+      "resolution_code": "Resolved - Workaround Applied",
+      "category": "Security",
+      "incident_state": "Resolved",
+      "assignment_group": "PQR - Media Services",
+      "priority": "3 - Moderate",
+      "configuration_item": "Stateroom Experience"
+    }
+  },
+  {
+    "ticket_id": "INC0888411",
+    "text": "Ticket INC0888411 \u2014 User Access & Authentication, 3 - Moderate, RP - Royal Princess\nRP - Digital key in ABC app stops authenticating after guest reinstalls the app\nA guest on RP reported that after reinstalling the ABC app, their previously working digital key no longer authenticates at their stateroom door.\nResolution: The issue was resolved by guiding the guest through re-pairing their digital key credential on RP. Authentication succeeded immediately after re-pairing. The app team is investigating why reinstallation does not automatically restore an existing key credential.",
+    "metadata": {
+      "incident_state": "Resolved",
+      "category": "User Access & Authentication",
+      "priority": "3 - Moderate",
+      "impact": "3 - Moderate / Limited",
+      "assignment_group": "PQR - ABC",
+      "location": "RP - Royal Princess",
+      "configuration_item": "ABC (Ocean - ABC)",
+      "resolution_code": "Resolved by caller"
+    }
+  }
+]
