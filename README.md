@@ -116,7 +116,7 @@ corpus match.
 pytest tests/ -v
 ```
 
-## Known Limitations - What I'd fix or build next, given another week
+## Known Limitations - What I'd fix or build next
 
 First, the two correctness issues already identified: a stricter system-prompt rule so the
 agent stops after one empty retrieval instead of reformulating repeatedly, and the same
