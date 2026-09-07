@@ -5,8 +5,7 @@ citations, and honest "I don't know" behavior when retrieval comes up empty.
 
 ## Corpus note
 
-The assignment's default corpus is ~30 pages of product docs plus a CSV of mock tickets. I was
-given a single Excel file instead — 118 rows, 23 columns, ServiceNow-style IT incident tickets
+The default corpus is a single Excel file instead — 118 rows, 23 columns, IT incident tickets
 for a cruise line's shipboard IT systems (ship codes, categories like Hardware/Application/
 Security/Database, short description + description + resolution notes per ticket). I'm using
 this as the entire corpus rather than sourcing separate product docs, since each ticket is
